@@ -13,10 +13,15 @@ $(document).ready(function(){
         });
         var div = '<div class="description d-none d-lg-block"><h1>Послуги з відеозйомки,<br/> фотозйомки та оренди</h1></div>'
         $(".my-header").append(div)
-        // $(".carousel").css("display", "block")
+        $(".my-header").css("height", "100vh")
+        // var height = $(".my-header-top").css("height")
+        // console.log(height)
+        // $(".description").css("max-height", height)
         $(".carousel").addClass("d-lg-none")
     }else{
         $(".carousel").removeClass("d-lg-none")
+        $(".my-header").css("height", "auto")
+
     }
     
 
