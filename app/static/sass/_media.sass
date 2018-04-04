@@ -1,0 +1,178 @@
+@import "vars"
+
+/*======== Desktop First ========*/
+
+
+/* Large Devises, Wide Screens */    
+@media only screen and (max-width : 1200px)
+    
+    .right
+        padding-left: 0px
+    .my-main
+        .carousel, .slide
+            display: none
+
+/* Medium Devises, Desctops */    
+@media only screen and (max-width : 992px)
+    h1
+        font-size: 23px
+    .my-header
+        height: auto
+        .container-fluid
+            background-color: rgba(#444444,1)
+        .menu
+            font-size: 15px
+        .right
+            padding-left: 0px
+        .h-phone
+            font-size: 16px
+            .fa-mobile-alt
+                margin-right: 3px
+                font-size: 15px
+        .lang
+            font-size: 11px
+            .nav-link
+                padding: 10px
+
+    .my-main
+        .carousel
+            .carousel-caption
+                margin-bottom: 50px
+                font-size: 15px
+                .utils-header
+                    font-size: 23px
+        .last-video
+            .title
+                max-width: 640px
+            iframe
+                width: 640px
+                height: 360px
+                
+    .my-footer
+        .foot
+            margin-top: 5px
+            font-size: 16px
+            &-name
+                font-size: 18px
+            &-phone
+                font-size: 17px
+            &-info
+            svg
+                font-size: 12px
+/* Small Devises, Tablets */    
+@media only screen and (max-width : 768px)
+    .my-header
+        height: auto
+        .container-fluid
+            background-color: rgba(#444444,1)
+        .logo
+            width: 80px
+        .sm-h-phone
+            .fa-mobile-alt
+                font-size: 14px
+                margin-right: 5px
+        .menu
+            .nav-link
+                margin-top: 0px
+                padding: 10px
+        .right
+            padding-right: 0px
+        .lang
+            .nav-link
+                // bottom: 0
+                margin-top: 0px
+                padding-top: 0px
+
+    .my-main
+        .carousel
+            .carousel-caption
+                margin-bottom: 50px
+                font-size: 15px
+                .utils-header
+                    font-size: 18px
+        .advantage
+            &-header
+            &-item
+                font-size: 15px
+            
+        .last-video
+            iframe
+                width: 352px
+                height: 240px
+    .my-footer
+        .foot-name
+            text-align: center
+        .foot-info
+            // padding-left: 50px
+        .foot-map
+            margin-top: 10px
+            width: 90%
+/* Extra Small Devises, Phones */    
+@media only screen and (max-width : 480px)
+    h1
+        font-size: 17px
+    .my-header
+        .logo
+            width: 60px
+        .h-name
+            font-size: 17px
+        .sm-h-phone
+            font-size: 14px
+
+    .my-main
+        .carousel
+            .carousel-caption
+                margin-top: 10px
+                margin-bottom: 10px
+                padding-bottom: 5px
+                font-size: 12px
+                .utils-header
+                    font-size: 14px
+            ol
+                margin-bottom: 0px
+                li
+                    width: 10px
+                    height: 10px
+        .last-video
+            .title
+                h6
+                    font-size: 14px
+            iframe
+                width: 240px
+                height: 180px
+            &-button
+                .btn 
+                    font-size: 14px
+                    width: 180px
+    .my-footer
+        .foot
+            &-name
+                font-size: 17px
+    
+/* Custom, Iphoine Retina */    
+@media only screen and (max-width : 320px)
+    pass
+    
+
+/*======== Mobile First ========*/
+
+
+/* Custom, Iphoine Retina */    
+@media only screen and (max-width : 320px)
+    pass
+    
+/* Extra Small Devises, Phones */    
+@media only screen and (max-width : 480px)
+    pass
+    
+/* Small Devises, Tablets */    
+@media only screen and (max-width : 768px)
+    pass
+    
+/* Medium Devises, Desctops */    
+@media only screen and (max-width : 992px)
+    pass
+
+/* Large Devises, Wide Screens */    
+@media only screen and (max-width : 1200px)
+    pass

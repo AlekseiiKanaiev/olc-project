@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+    Videos
+{% endblock %}
+{% block main %}
+    <div class="player_2">
+        <iframe id="player" class="video-preview" type="text/html" width="980" height="580"
+        src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+        frameborder="0">
+        </iframe>
+    </div>
+    <div class="video-post">
+        {% if video %}
+            {% for v in video %}
+                <div class="player_1">
+                    <iframe width="840" height="480" src="https://www.youtube.com/embed/{{ v.video_id }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    {{ v.body }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

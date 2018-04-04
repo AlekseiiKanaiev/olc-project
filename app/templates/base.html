@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- <style>body{opacity: 0; overflow-x: hidden;}html{background-color: #fff;}</style> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+
+    <!-- http://stewartjpark.com/Flask-JSGlue/ -->
+    {{ JSGlue.include() }}
+
+    <title>Test{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% block header %}
+        {% endblock %}
+    </header>
+    <main>  
+        {% block main %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div class="section my-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5 class="foot foot-name">КП ХОР <span class="olc">"ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР"</span></h5>
+                        <div class="foot-info" >
+                            <div class="foot foot-addr">
+                                <i class="fas fa-location-arrow"></i>
+                                м.Харків, майдан Свободи 5/1
+                            </div>
+                            <div class="foot foot-time">
+                                <i class="far fa-clock"></i>
+                                Часи роботи: по буднях, 9:00 - 18:00
+                            </div>
+                            <div class="foot foot-phone">
+                                <i class="fas fa-mobile-alt"></i>
+                                099-999-99-99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col foot-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d906.589855699531!2d36.22675086673276!3d50.0071690021728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a11ff66608cd%3A0x742d8e411d257c9f!2z0L_Quy4g0KHQstC-0LHQvtC00YssIDUvMSwg0KXQsNGA0YzQutC-0LIsINCl0LDRgNGM0LrQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDYxMDAw!5e0!3m2!1sru!2sua!4v1521544129662" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <link rel="stylesheet" href="../static/css/main.min.css" type="text/css"/>
+    <script src="../static/js/libs.min.js"></script>
+    <script src="../static/js/common.js"></script>
+</body>
+</html>

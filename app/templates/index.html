@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block title %}
+    Golovna
+{% endblock %}
+{% block header %}
+    <div class="section my-header">
+        <div class="container-fluid">
+            <div class="row"> 
+                <div class="col-12 col-md-2 left d-lg-flex justify-content-end align-items-start">
+                    <img class="logo" src="../static/img/logo.svg" alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'" height="150px">
+                </div>
+                <div class="col-12 col-md-8">
+                    <h1 class="h-name">КП ХОР <span class="olc">"ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР"</span></h1>
+                    <h6>
+                        <div class="sm-h-phone d-md-none d-sm-block">
+                            <i class="fas fa-mobile-alt"></i>
+                            099-999-99-99
+                        </div>
+                    </h6>
+                    <div class="menu d-flex justify-content-center">
+                        <nav class="navbar navbar-expand-sm navbar-dark">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="true">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ active=='index_active'and 'active' }}" href="{{ url_for('index') }}">Головна</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link {{ active=='galery_active'and 'active' }}" data-toggle="dropdown" href="{{ url_for('galery') }}" role="button" aria-haspopup="true" aria-expanded="false">Відеозйомка</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{{ url_for('oblvideo') }}">Відео для облради</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="{{ url_for('privatvideo') }}">Відео на замовлення приватних клієнтів</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link {{ active=='orenda_active'and 'active' }}" data-toggle="dropdown" href="{{ url_for('orenda') }}" role="button" aria-haspopup="true" aria-expanded="false">Оренда</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{{ url_for('orendamest') }}">Оренда приміщень</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="{{ url_for('orendatrans') }}">Оренда автотранспорту</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ active=='aboutus_active' and 'active' }}" href="{{ url_for('aboutus') }}">Про нас</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ active=='contacts_active' and 'active' }}" href="{{ url_for('contacts') }}">Контакти</a>
+                                    </li> 
+                                </ul>
+                            </div> 
+                        </nav>
+                    </div>
+                </div>   
+                <div class="col-md-2 right">
+                    <div class="h-phone d-none d-md-block">
+                        <i class="fas fa-mobile-alt"></i>
+                        099-999-99-99
+                    </div>
+                    <nav class="nav justify-content-center lang">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">укр</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">рус</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="description d-none d-lg-block" d-flex justify-content-center align-items-center>
+            <h1>Послуги з відеозйомки,<br/> фотозйомки та оренди</h1> 
+        </div>
+    </div>
+{% endblock %}
+{% block main %}
+    <div class="section my-main">
+        <div class="carousel slide" id="my-carousel" data-ride="carousel">
+            <div class="carousel-inner">
+                <ol class="carousel-indicators">
+                    <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#my-carousel" data-slide-to="1"></li>
+                    <li data-target="#my-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="../static/img/bg1.jpg" alt="Первый слайд">
+                    <div class="carousel-caption">
+                        <div class="col-12 col-sm-6 col-md-4 utils" >
+                            <h3 class="utils-header">
+                                Lorem ipsum dolor sit amet.
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <a class="btn btn-primary" href="#" role="button">Link</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="../static/img/bg2.jpg" alt="Второй слайд">
+                    <div class="carousel-caption">
+                        <div class="col-12 col-sm-6 col-md-4 utils">
+                            <h3 class="utils-header">
+                                Lorem ipsum dolor sit amet.
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <a class="btn btn-primary" href="#" role="button">Link</a>
+                        </div>                      
+                     </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="../static/img/bg3.jpg" alt="Третий слайд">
+                    <div class="carousel-caption">
+                        <div class="col-12 col-sm-6 col-md-4 utils">
+                            <h3 class="utils-header">
+                                Lorem ipsum dolor sit amet.
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <a class="btn btn-primary" href="#" role="button">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#my-carousel" role="button" data-slide="prev">
+                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"> -->
+                <i class="fas fa-angle-left"></i>
+                <!-- </span> -->
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#my-carousel" role="button" data-slide="next">
+                <i class="fas fa-angle-right"></i>
+                <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        
+        <div class="container-fluid advantage">
+            <div class="row">
+                <div class="col advantage-header">
+                    <h1>наші переваги</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-3 advantage-item">Lorem ipsum dolor sit amet.</div>
+                <div class="col-12 col-sm-3 advantage-item">Lorem ipsum dolor sit amet.</div>
+                <div class="col-12 col-sm-3 advantage-item">Lorem ipsum dolor sit amet.</div>
+                <div class="col-12 col-sm-3 advantage-item">Lorem ipsum dolor sit amet.</div>
+                <!-- <div class="col-1"></div> -->
+            </div>
+        </div>
+        {% if video %}
+        <div class="container-fluid last-video">
+            <div class="row last-video-header d-flex justify-content-center">
+                <h1>Останнє додане відео</h1>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="last-video-video ">
+                    <div class="title">
+                        <h6>
+                            {{ video.body }}
+                        </h6> 
+                    </div>
+                    <iframe width="854" height="480" src="https://www.youtube.com/embed/{{ video.video_id }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="row last-video-button d-flex justify-content-center">
+                <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Переглянути інші відео</a>
+                <a href="#" class="btn btn-primary btn-lg main" role="button" aria-pressed="true">Замовити відеозйомку</a>
+            </div>
+        </div>
+        {% endif %}
+        <div class="container-fluid team ">
+            <div class="row team-header d-flex justify-content-center">
+                <h1>Наша команда</h1>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 team-person d-flex justify-content-center">
+                    <i class="far fa-user"></i>
+                    <div class="info">
+                        Директор <br/>
+                        Іванов Іван Іванович
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 team-person d-flex justify-content-center">
+                    <i class="far fa-user"></i>
+                    <div class="info">
+                        Фахівець <br/>
+                        Іванов Іван Іванович
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
