@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    if (!device.mobile() && !device.tablet()){
+    if (!device.tablet() && !device.mobile()){
         var videobackground = new $.backgroundVideo($('.my-header'), {
             "align": "centerXY",
             "width": 1980,
@@ -11,13 +11,11 @@ $(document).ready(function(){
             "autoplay": true,
             "loop": true
         });
-        
+        var div = '<div class="description d-none d-lg-block"><h1>Послуги з відеозйомки,<br/> фотозйомки та оренди</h1></div>'
+        $(".my-header").append(div)
+        // $(".carousel").css("display", "block")
     }
-    else{
-        $(".carousel").css({display:"block"});
-        $(".descripton").css({display:"none"})
-    }
-        
+    
 
     $('.dropdown').hover(
         function(){
