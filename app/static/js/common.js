@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    var lang = $(".lang").find(".active").attr("id")
+    // changeLang(lang)
+
     if (!device.tablet() && !device.mobile()){
         var videobackground = new $.backgroundVideo($('.my-header'), {
             "align": "centerXY",
@@ -11,7 +14,13 @@ $(document).ready(function(){
             "autoplay": true,
             "loop": true
         });
-        var div = '<div class="description d-none d-lg-block"><h1>Послуги з відеозйомки,<br/> фотозйомки та оренди</h1></div>'
+        // var lang = $(".lang").find(".active").attr("id")
+        var div = (lang === "ukr")?
+        '<div class="description d-none d-lg-block"><div class = "ukr"><h1>Послуги з відеозйомки,<br/> фотозйомки та оренди</h1></div></div>'
+        :'<div class="description d-none d-lg-block"><div class = "rus"><h1>Услуги видеосъёмки,<br/> фотосъёмки и аренды</h1></div></div>'
+        // var div_ukr = '<div class = "ukr"><div class="description d-none d-lg-block"><h1>Послуги з відеозйомки,<br/> фотозйомки та оренди</h1></div></div>'
+        // var div_rus = '<div class = "rus d-none"><div class="description d-none d-lg-block"><h1>Услуги видеосъёмки,<br/> фотосъёмки и аренды</h1></div></div>'
+        // var div = div_ukr+div_rus
         $(".my-header").append(div)
         $(".my-header").css("height", "100vh")
         // var height = $(".my-header-top").css("height")
@@ -21,10 +30,8 @@ $(document).ready(function(){
     }else{
         $(".carousel").removeClass("d-lg-none")
         $(".my-header").css("height", "auto")
-
     }
     
-
     $('.dropdown').hover(
         function(){
             $(".dropdown-menu", this).stop(true, true).slideDown().addClass("show")
@@ -45,5 +52,29 @@ $(document).ready(function(){
 
     // var video = document.getElementById("tiser");
     // video.loop = true;
+    
+
+    // $(".lang").click(()=>changeLang())
+
+    
+    // $("#ukr").click(function(){
+    //     $(".ukr").removeClass("d-none")
+    //     $(".rus").addClass("d-none")
+    // })
+    // $("#rus").click(function(){
+    //     $(".ukr").addClass("d-none")
+    //     $(".rus").removeClass("d-none")
+    // })
 
 });
+
+function changeLang(lang){
+    console.log(lang)
+    if (lang === "ukr"){
+        $(".ukr").removeClass("d-none")
+        $(".rus").addClass("d-none")
+    }else{
+        $(".ukr").addClass("d-none")
+        $(".rus").removeClass("d-none")
+    }
+}

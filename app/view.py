@@ -1,17 +1,32 @@
 #!/usr/bin/python3.5
-from flask import render_template, request
+from flask import render_template, request, redirect, url_for
 from app import app, babel
 from flask_babel import gettext
 from config import Configurations
 from models import Video
 
+# # babel translate
+# @babel.localeselector
+# def get_local():
+#     return "ru"
+# #     return "uk"
+#     # return  request.accept_languages.best_match(app.config["LANGUAGES"])
+
+lang = "ukr"
+
 @app.route("/", methods = ["GET", "POST"])
 def index():
-    if request.method == "POST":
-        value = request.data("")
-        print(value)
-    video = Video.query.all().pop()
-    return render_template("index.html", video = video, active = "index_active")
+    return redirect(url_for('main'))
+
+@app.route("/golovna", methods = ["GET", "POST"])
+def main():
+    if request.args.get("lang"):
+        language = request.args.get("lang")
+    else:
+        language = "ukr"
+    print("lang "+language)
+    header_class = "my-header"
+    return render_template("index.html", video = video, active = "index_active", lang = language, header_class = header_class)
 
 @app.route("/galery")
 def galery():
@@ -19,7 +34,13 @@ def galery():
 
 @app.route("/galery/oblvideo")
 def oblvideo():
-    return render_template("oblvideo.html", active = "galery_active")
+    if request.args.get("lang"):
+        language = request.args.get("lang")
+    else:
+        language = "ukr"
+    print("lang "+language)
+    header_class = "my-simple-header"
+    return render_template("oblvideo.html", active = "galery_active", lang = language, header_class = header_class)
 
 @app.route("/galery/privatvideo")
 def privatvideo():
@@ -46,11 +67,6 @@ def contacts():
     return render_template("contacts.html", active = "contacts_active")
 
 
-# babel translate
-@babel.localeselector
-def get_local():
-    return "ru"
-    # return  request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 

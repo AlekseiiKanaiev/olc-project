@@ -15,8 +15,116 @@
 </head>
 <body>
     <header>
-        {% block header %}
-        {% endblock %}
+        <div class="section {{header_class}}">
+            <div class="container-fluid my-header-top">
+                <div class="row"> 
+                    <div class="col-12 col-md-2 left d-lg-flex justify-content-end align-items-start">
+                        <img class="logo" src="../static/img/logo.svg" alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'" height="150px">
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <h1 class="h-name">КП ХОР <span class="olc">"ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР"</span></h1>
+                        <h6>
+                            <div class="sm-h-phone d-md-none d-sm-block">
+                                <i class="fas fa-mobile-alt"></i>
+                                099-999-99-99
+                            </div>
+                        </h6>
+                        <div class="menu d-flex justify-content-center">
+                            <nav class="navbar navbar-expand-sm navbar-dark">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="true">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                                        <!-- <div class="ukr"> -->
+                                            <ul class="navbar-nav">
+                                                <li class="nav-item">
+                                                    <a class="nav-link {{ active=='index_active'and 'active' }}" href="/golovna?lang={{lang}}">{{"Головна" if lang=="ukr" else "Главная"}}</a>
+                                                </li>
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link {{ active=='galery_active'and 'active' }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{"Відеозйомка" if lang=="ukr" else "Видеосъёмка"}}</a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="/galery/oblvideo?lang={{lang}}">{{"Відео для облради" if lang=="ukr" else "Видео для облсовета"}}</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="/galery/privatvideo?lang={{lang}}">{{"Відео на замовлення" if lang=="ukr" else "Видео на заказ"}}</a>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link {{ active=='orenda_active'and 'active' }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{"Оренда" if lang=="ukr" else "Aренда"}}</a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="/orenda/orendamest?lang={{lang}}">{{"Оренда приміщень" if lang=="ukr" else "Аренда помещений"}}</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="/orenda/orendatrans?lang={{lang}}">{{"Оренда автотранспорту" if lang=="ukr" else "Аренда автотранспорта"}}</a>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link {{ active=='aboutus_active' and 'active' }}" href="/aboutus?lang={{lang}}">{{"Про нас" if lang=="ukr" else "O нас"}}</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link {{ active=='contacts_active' and 'active' }}" href="/contacts?lang={{lang}}">{{"Контакти" if lang=="ukr" else "Контакты"}}</a>
+                                                </li> 
+                                            </ul>
+                                        <!-- </div> -->
+                                        <!-- <div class="rus">
+                                            <ul class="navbar-nav">
+                                                <li class="nav-item">
+                                                    <a class="nav-link {{ active=='index_active'and 'active' }}" href="/golovna?lang=rus">{{ _("Главная") }}</a>
+                                                </li>
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link {{ active=='galery_active'and 'active' }}" data-toggle="dropdown" href="{{ url_for('galery') }}" role="button" aria-haspopup="true" aria-expanded="false">{{ _("Видеосъёмка") }}</a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="/galery/oblvideo?lang={{lang}}">{{ _("Видео для облсовета") }}</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="/galery/privatvideo?lang={{lang}}">{{"Видео на заказ" if lang=="rus" else "Відео на замовлення"}}</a>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link {{ active=='orenda_active'and 'active' }}" data-toggle="dropdown" href="{{ url_for('orenda') }}" role="button" aria-haspopup="true" aria-expanded="false">{{ _("Аренда") }}</a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="{{ url_for('orendamest') }}">{{ _("Аренда помещений") }}</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="{{ url_for('orendatrans') }}">{{ _("Аренда автотранспорта") }}</a>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link {{ active=='aboutus_active' and 'active' }}" href="{{ url_for('aboutus') }}">{{ _("О нас") }}</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link {{ active=='contacts_active' and 'active' }}" href="{{ url_for('contacts') }}">{{ _("Контакты") }}</a>
+                                                </li> 
+                                            </ul>
+                                        </div> -->
+                                </div> 
+                            </nav>
+                        </div>
+                    </div>   
+                    <div class="col-md-2 right">
+                        <div class="h-phone d-none d-md-block">
+                            <i class="fas fa-mobile-alt"></i>
+                            099-999-99-99
+                        </div>
+                        <nav class="nav justify-content-center lang">
+                            <li class="nav-item">
+                                <a class="nav-link {{ lang=='ukr' and 'active' }}" id = 'ukr' href="/golovna?lang=ukr" name = "ukr">укр</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ lang=='rus' and 'active' }}" id = 'rus' href = "/golovna?lang=rus" name = "rus">рус</a>
+                            </li>
+                        </nav>
+                        <!-- <form class="form-group d-inline" method="POST">
+                            <input class="d-none" type="text" name = "lang" value="ukr">
+                            <button type="submit" name = "ukr">ukr</button>
+                        </form>
+                        <form class="form-group d-inline" method="POST">
+                            <input class="d-none" type="text" name = "lang" value="rus">
+                            <button type="submit" name = "rus">rus</button>
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="description d-none d-lg-block" d-flex justify-content-center align-items-center>
+                <h1>Послуги з відеозйомки,<br/> фотозйомки та оренди</h1> 
+            </div> -->
+        </div>
     </header>
     <main>  
         {% block main %}

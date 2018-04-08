@@ -18,11 +18,10 @@ h1
     text-transform: uppercase
 
 
-.my-header
+
+.my-header, .my-simple-header
     text-align: center
     width: 100%
-    video
-        // position: absolute
     .container-fluid
         background-color: rgba(#444444,0.8)
     .logo
@@ -39,6 +38,7 @@ h1
         color: $light-color
         font-size: 16px
     .menu
+        
         .dropdown-menu
             margin: auto
             opacity: 0.8
@@ -59,8 +59,10 @@ h1
             border-color: $accent-color
         .collapsed
             border-color: rgba(255, 255, 255, 0.5)
+        
         .navbar-nav
             .nav-link
+                cursor: pointer
                 color: #fff
                 &:hover
                     color: $accent-color
@@ -215,5 +217,6 @@ h1
         .fa-mobile-alt
             margin: 0 12px 0 4px
         &-map
+
 
 @import "media"

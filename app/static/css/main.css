@@ -8301,85 +8301,86 @@ h1 {
   font-weight: bold;
   text-transform: uppercase; }
 
-.my-header {
+.my-header, .my-simple-header {
   text-align: center;
   width: 100%; }
-  .my-header .container-fluid {
+  .my-header .container-fluid, .my-simple-header .container-fluid {
     background-color: rgba(68, 68, 68, 0.8); }
-  .my-header .logo {
+  .my-header .logo, .my-simple-header .logo {
     bottom: 20px;
     width: 65px;
     height: auto; }
-  .my-header .h-name {
+  .my-header .h-name, .my-simple-header .h-name {
     color: #FF6B50;
     margin: 10px 0 0 0; }
-    .my-header .h-name .olc {
+    .my-header .h-name .olc, .my-simple-header .h-name .olc {
       white-space: nowrap; }
-  .my-header .sm-h-phone {
+  .my-header .sm-h-phone, .my-simple-header .sm-h-phone {
     color: rgba(255, 255, 255, 0.8);
     font-size: 16px; }
-  .my-header .menu .dropdown-menu {
+  .my-header .menu .dropdown-menu, .my-simple-header .menu .dropdown-menu {
     margin: auto;
     opacity: 0.8;
     max-width: 150px; }
-    .my-header .menu .dropdown-menu .dropdown-item {
+    .my-header .menu .dropdown-menu .dropdown-item, .my-simple-header .menu .dropdown-menu .dropdown-item {
       white-space: normal;
       font-size: 14px;
       padding: 0 10px; }
-      .my-header .menu .dropdown-menu .dropdown-item:hover {
+      .my-header .menu .dropdown-menu .dropdown-item:hover, .my-simple-header .menu .dropdown-menu .dropdown-item:hover {
         color: #FF6B50;
         -webkit-transition: color .25s ease;
         -o-transition: color .25s ease;
         transition: color .25s ease; }
-  .my-header .navbar-dark {
+  .my-header .navbar-dark, .my-simple-header .navbar-dark {
     padding: 0; }
-    .my-header .navbar-dark button {
+    .my-header .navbar-dark button, .my-simple-header .navbar-dark button {
       -webkit-column-rule-color: #FF6B50;
          -moz-column-rule-color: #FF6B50;
               column-rule-color: #FF6B50; }
-    .my-header .navbar-dark .navbar-toggler {
+    .my-header .navbar-dark .navbar-toggler, .my-simple-header .navbar-dark .navbar-toggler {
       -webkit-box-align: end;
       -webkit-align-items: flex-end;
           -ms-flex-align: end;
               align-items: flex-end;
       border-color: #FF6B50; }
-    .my-header .navbar-dark .collapsed {
+    .my-header .navbar-dark .collapsed, .my-simple-header .navbar-dark .collapsed {
       border-color: rgba(255, 255, 255, 0.5); }
-    .my-header .navbar-dark .navbar-nav .nav-link {
+    .my-header .navbar-dark .navbar-nav .nav-link, .my-simple-header .navbar-dark .navbar-nav .nav-link {
+      cursor: pointer;
       color: #fff; }
-      .my-header .navbar-dark .navbar-nav .nav-link:hover {
+      .my-header .navbar-dark .navbar-nav .nav-link:hover, .my-simple-header .navbar-dark .navbar-nav .nav-link:hover {
         color: #FF6B50;
         -webkit-transition: color .5s ease;
         -o-transition: color .5s ease;
         transition: color .5s ease; }
-    .my-header .navbar-dark .navbar-nav .active {
+    .my-header .navbar-dark .navbar-nav .active, .my-simple-header .navbar-dark .navbar-nav .active {
       color: #FF6B50; }
-  .my-header .h-phone {
+  .my-header .h-phone, .my-simple-header .h-phone {
     margin: 10px 0;
     font-size: 20px;
     color: rgba(255, 255, 255, 0.8);
     white-space: nowrap; }
-    .my-header .h-phone .fa-mobile-alt {
+    .my-header .h-phone .fa-mobile-alt, .my-simple-header .h-phone .fa-mobile-alt {
       margin-right: 8px;
       font-size: 16px; }
-  .my-header .lang {
+  .my-header .lang, .my-simple-header .lang {
     font-size: 13px; }
-    .my-header .lang .nav-link {
+    .my-header .lang .nav-link, .my-simple-header .lang .nav-link {
       color: #fff; }
-      .my-header .lang .nav-link:hover {
+      .my-header .lang .nav-link:hover, .my-simple-header .lang .nav-link:hover {
         color: #FF6B50;
         -webkit-transition: color .5s ease;
         -o-transition: color .5s ease;
         transition: color .5s ease; }
-    .my-header .lang .active {
+    .my-header .lang .active, .my-simple-header .lang .active {
       color: #FF6B50; }
-  .my-header .description {
+  .my-header .description, .my-simple-header .description {
     color: white;
     height: 100%;
     max-height: 600px;
     width: 100%;
     margin-top: 100px; }
-    .my-header .description h1 {
+    .my-header .description h1, .my-simple-header .description h1 {
       font-size: 36px;
       letter-spacing: 4px; }
 
