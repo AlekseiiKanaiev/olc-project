@@ -14,6 +14,7 @@
     <title>Test{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <div class="preloader"><div class="puls"></div></div>
     <header>
         <div class="section {{header_class}}">
             <div class="container-fluid my-header-top">
@@ -22,11 +23,15 @@
                         <img class="logo" src="../static/img/logo.svg" alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'" height="150px">
                     </div>
                     <div class="col-12 col-md-8">
-                        <h1 class="h-name">КП ХОР <span class="olc">"ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР"</span></h1>
+                        <h1 class="h-name">{{"КП ХОР " if lang=="ukr" else "КП ХОC "}}
+                            <span class="olc">
+                                {{'"ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР"' if lang=="ukr" else '"Областной логистический центр"'}}
+                            </span>
+                        </h1>
                         <h6>
                             <div class="sm-h-phone d-md-none d-sm-block">
                                 <i class="fas fa-mobile-alt"></i>
-                                099-999-99-99
+                                066-522-43-23
                             </div>
                         </h6>
                         <div class="menu d-flex justify-content-center">
@@ -92,7 +97,7 @@
                     <div class="col-md-2 right">
                         <div class="h-phone d-none d-md-block">
                             <i class="fas fa-mobile-alt"></i>
-                            099-999-99-99
+                            066-522-43-23
                         </div>
                         <nav class="nav justify-content-center lang">
                             <li class="nav-item">
@@ -118,19 +123,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <h5 class="foot foot-name">КП ХОР <span class="olc">"ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР"</span></h5>
+                        <h5 class="foot foot-name">{{"КП ХОР " if lang=="ukr" else "КП ХОC "}}
+                            <span class="olc">
+                                {{'"ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР"' if lang=="ukr" else '"Областной логистический центр"'}}
+                            </span>
+                        </h5>
                         <div class="foot-info" >
                             <div class="foot foot-addr">
                                 <i class="fas fa-location-arrow"></i>
-                                м.Харків, майдан Свободи 5/1
-                            </div>
-                            <div class="foot foot-time">
-                                <i class="far fa-clock"></i>
-                                Часи роботи: по буднях, 9:00 - 18:00
+                                {{"м.Харків, майдан Свободи, 5 (Держпром)" if lang == "ukr" 
+                                else "г.Харьков, пл.Свободы, 5 (Госпром)"}}
                             </div>
                             <div class="foot foot-phone">
                                 <i class="fas fa-mobile-alt"></i>
-                                099-999-99-99
+                                066-522-43-23
                             </div>
                         </div>
                     </div>
@@ -141,7 +147,9 @@
             </div>
         </div>
     </footer>
-
+    <div class="to-top" title='{{"Нагору" if lang == "ukr" else "Наверх"}}'>
+        <i class="fas fa-angle-double-up"></i>
+    </div>
     <link rel="stylesheet" href="../static/css/main.min.css" type="text/css"/>
     <script src="../static/js/libs.min.js"></script>
     <script src="../static/js/common.js"></script>

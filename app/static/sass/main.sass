@@ -17,7 +17,52 @@ h1
     font-weight: bold
     text-transform: uppercase
 
+@mixin opacity($opacity)
+    opacity: $opacity/100
+    filter: alpha(opacity = $opacity)
 
+.preloader
+    position: fixed
+    top: 0px
+    left: 0px
+    bottom: 0px
+    right: 0px
+    z-index: 100
+    background-color: black
+    .puls
+        position: relative
+        left: 50%
+        top: 50vh
+        margin: 
+            left: -40px
+            right: -40px
+        &::before, &::after
+            content: ""
+            border: 5px solid $light-color
+            width: 80px
+            height: 80px
+            border-radius: 500px
+            position: absolute
+        &::before
+            animation: puls-outer 0.8s ease-in infinite
+        &::after
+            animation: puls-inner 0.8s linear infinite
+
+@keyframes puls-outer
+    0%
+        @include opacity(100)
+    50%
+        @include opacity(50)
+    100%
+        @include opacity(0)
+
+@keyframes puls-inner
+    0%
+        @include opacity(0)
+        transform: scale(0)
+    100%
+        @include opacity(100)
+        transform: scale(1)
 
 .my-header, .my-simple-header
     text-align: center
@@ -104,11 +149,11 @@ h1
 //         display: none
     
 .my-main
-    .carousel
+    #my-carousel
         .carousel-item
             height: 100%
         .carousel-caption
-            margin-bottom: 150px
+            margin-bottom: 200px
             a
                 background-color: $accent-color
                 opacity: 0.8
@@ -143,6 +188,8 @@ h1
             text-align: center
             margin-top: 30px
             margin-bottom: 20px
+        &-item
+            margin-top: 10px
         .row
             padding:
                 right: 20px
@@ -168,7 +215,8 @@ h1
         &-button
             // padding-bottom: 30px
             .btn 
-                width: 250px
+                // width: 
+                width: auto
                 height: auto
                 font-size: 20px
                 background-color: grey
@@ -186,14 +234,36 @@ h1
         padding-top: 30px
         &-header
             margin-bottom: 20px
-        &-person
-            font-weight: 300
-            margin-right: 
-            margin-bottom: 30px
-            svg
-                font-size: 70px
-            .info
-                margin-left: 20px
+        &-carousel
+            .owl-nav
+                position: absolute
+                width: 100%
+                top: 0px
+                // font-size: 20px
+                // margin: 20px
+                button
+                    position: absolute
+                    font-size: 26px
+                    width: 50px
+                    height: 50px
+                    &:focus
+                        border-color: white
+                        outline-color: white
+                    &:hover
+                        color: $accent-color
+                        transition: color 0.25s ease
+                .owl-prev
+                    left: 0px
+                .owl-next
+                    right: 0px
+
+            .team-carousel-item
+                text-align: center
+                font-weight: 300
+                margin-bottom: 30px
+                svg
+                    font-size: 70px
+                .info
 
 .my-footer
     background-color: #777777
@@ -218,5 +288,27 @@ h1
             margin: 0 12px 0 4px
         &-map
 
+.to-top
+    position: fixed
+    color: rgba(#444444,0.8)
+    bottom: 25px
+    right: -100px
+    background-color: $light-color
+    z-index: 12
+    border-radius: 10em
+    width: 50px
+    height: 50px
+    text-align: center
+    line-height: 50px
+    font-size: 26px
+    cursor: pointer
+    transition: all 0.25s ease
+    opacity: 0.5
+    &:hover
+        opacity: 1
+        background-color: $accent-color
+        border: 1px solid $accent-color
+    &.active
+        right: 25px
 
 @import "media"

@@ -13,7 +13,7 @@
 @media only screen and (max-width : 992px)
     h1
         font-size: 23px
-    .my-header
+    .my-header, .my-simple-header
         height: auto
         .container-fluid
             background-color: rgba(#444444,1)
@@ -32,9 +32,9 @@
                 padding: 10px
 
     .my-main
-        .carousel
+        #my-carousel
             .carousel-caption
-                margin-bottom: 50px
+                margin-bottom: 150px
                 font-size: 15px
                 .utils-header
                     font-size: 23px
@@ -58,7 +58,7 @@
                 font-size: 12px
 /* Small Devises, Tablets */    
 @media only screen and (max-width : 768px)
-    .my-header
+    .my-header, .my-simple-header
         height: auto
         .container-fluid
             background-color: rgba(#444444,1)
@@ -81,14 +81,16 @@
                 padding-top: 0px
 
     .my-main
-        .carousel
+        #my-carousel
             .carousel-caption
-                margin-bottom: 50px
+                margin-bottom: 100px
                 font-size: 15px
                 .utils-header
                     font-size: 18px
         .advantage
             &-header
+                margin-top: 20px
+                margin-bottom: 0
             &-item
                 font-size: 15px
             
@@ -108,19 +110,20 @@
 @media only screen and (max-width : 480px)
     h1
         font-size: 17px
-    .my-header
+    .my-header, .my-simple-header
         .logo
             width: 60px
         .h-name
             font-size: 17px
+            margin-bottom: 5px
         .sm-h-phone
             font-size: 14px
 
     .my-main
-        .carousel
+        #my-carousel
             .carousel-caption
                 margin-top: 10px
-                margin-bottom: 10px
+                margin-bottom: 50px
                 padding-bottom: 5px
                 font-size: 12px
                 .utils-header
@@ -130,6 +133,9 @@
                 li
                     width: 10px
                     height: 10px
+        .advantage
+            &-item
+                font-size: 14px
         .last-video
             .title
                 h6
@@ -140,7 +146,7 @@
             &-button
                 .btn 
                     font-size: 14px
-                    width: 180px
+                    // width: 180px
     .my-footer
         .foot
             &-name

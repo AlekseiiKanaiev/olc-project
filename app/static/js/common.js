@@ -1,7 +1,9 @@
 $(document).ready(function(){
+    //define language 
     var lang = $(".lang").find(".active").attr("id")
     // changeLang(lang)
 
+    //video-tiser
     if (!device.tablet() && !device.mobile()){
         var videobackground = new $.backgroundVideo($('.my-header'), {
             "align": "centerXY",
@@ -14,24 +16,21 @@ $(document).ready(function(){
             "autoplay": true,
             "loop": true
         });
-        // var lang = $(".lang").find(".active").attr("id")
+
+        $("#video_background").css("position", "absolute")
+
         var div = (lang === "ukr")?
         '<div class="description d-none d-lg-block"><div class = "ukr"><h1>Послуги з відеозйомки,<br/> фотозйомки та оренди</h1></div></div>'
         :'<div class="description d-none d-lg-block"><div class = "rus"><h1>Услуги видеосъёмки,<br/> фотосъёмки и аренды</h1></div></div>'
-        // var div_ukr = '<div class = "ukr"><div class="description d-none d-lg-block"><h1>Послуги з відеозйомки,<br/> фотозйомки та оренди</h1></div></div>'
-        // var div_rus = '<div class = "rus d-none"><div class="description d-none d-lg-block"><h1>Услуги видеосъёмки,<br/> фотосъёмки и аренды</h1></div></div>'
-        // var div = div_ukr+div_rus
         $(".my-header").append(div)
         $(".my-header").css("height", "100vh")
-        // var height = $(".my-header-top").css("height")
-        // console.log(height)
-        // $(".description").css("max-height", height)
-        $(".carousel").addClass("d-lg-none")
+        $("#my-carousel").addClass("d-lg-none")
     }else{
-        $(".carousel").removeClass("d-lg-none")
+        $("#my-carousel").removeClass("d-lg-none")
         $(".my-header").css("height", "auto")
     }
     
+    //seting dropdown-menu
     $('.dropdown').hover(
         function(){
             $(".dropdown-menu", this).stop(true, true).slideDown().addClass("show")
@@ -41,33 +40,57 @@ $(document).ready(function(){
         }
     );
 
+    //setting active link
     $(".nav-item").click(function(){
         $(this).parent().find(".active").removeClass("active");
         $(".nav-link", this).addClass("active");
     });
 
-    $(".carousel").carousel({
+    //init top carousel
+    $("#my-carousel").carousel({
         interval: 5000
     });
+    //init and seting team carousel
+    $("#team-carousel").owlCarousel({
+        loop:true,
+        nav:true,
+        smartSpeed:700,
+        navText:[
+            '<i class="fas fa-angle-left"></i>',
+            '<i class="fas fa-angle-right"></i>'
+        ],
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            768:{
+                items:2,
+                nav:true
+            }
+        }
+    })
 
-    // var video = document.getElementById("tiser");
-    // video.loop = true;
-    
+    //seting to-top button
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > $(this).height()/2){
+            $(".to-top").addClass("active")
+        }else{
+            $(".to-top").removeClass("active")
+        }
+    })
+    $(".to-top").click(function(){
+        $("html, body").stop().animate({scrollTop:0}, "slow", "swing")
+    })
 
-    // $(".lang").click(()=>changeLang())
-
-    
-    // $("#ukr").click(function(){
-    //     $(".ukr").removeClass("d-none")
-    //     $(".rus").addClass("d-none")
-    // })
-    // $("#rus").click(function(){
-    //     $(".ukr").addClass("d-none")
-    //     $(".rus").removeClass("d-none")
-    // })
-
+    //seting preloader
+    $(window).on("load", function(){
+        $(".preloader").delay(1000).fadeOut("slow")
+    })
 });
 
+//func to change lang without reload
 function changeLang(lang){
     console.log(lang)
     if (lang === "ukr"){

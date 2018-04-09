@@ -30,7 +30,7 @@ gulp.task("scripts", function(){
         "./app/static/libs/bootstrap/dist/js/bootstrap.bundle.min.js",
         "./app/static/libs/background-video/jquery.backgroundvideo.min.js",
         "./app/static/libs/device.js/lib/device.min.js",
-        // "./app/static/libs/jqery.mb.ytplayer/dist/jquery.mb.YTPlayer.min.js",
+        "./app/static/libs/owl.carousel/dist/owl.carousel.min.js",
         "./app/static/fonts/fontawesome/fontawesome-all.js"
     ])
     .pipe(concat("libs.min.js"))

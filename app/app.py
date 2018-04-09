@@ -10,7 +10,6 @@ from config import Configurations
 
 app = Flask(__name__)
 
-
 app.config.from_object(Configurations)
 
 JSGlue(app)
@@ -18,7 +17,6 @@ JSGlue(app)
 db = SQLAlchemy(app)
 
 babel = Babel(app)
-
 
 ### ADMIN ###
 admin = Admin(app)
