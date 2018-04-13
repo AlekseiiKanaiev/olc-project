@@ -1,9 +1,10 @@
 #!/usr/bin/python3.5
 from flask import render_template, request, redirect, url_for
-from app import app, babel
-from flask_babel import gettext
+from app import app
+from sqlalchemy import desc
+# from flask_babel import gettext
 from config import Configurations
-from models import Video
+from models import Video, Team
 
 # # babel translate
 # @babel.localeselector
@@ -13,13 +14,15 @@ from models import Video
 #     # return  request.accept_languages.best_match(app.config["LANGUAGES"])
 
 def get_data(simple = True):
-    if request.args.get("lang"):
-        language = request.args.get("lang")
+    language = request.args.get("lang")
+    if language and language == "rus":
+        lang = language
     else:
-        language = "ukr"
+        lang = "ukr"
     url = request.path
     header_class = "my-simple-header" if simple else "my-header"
-    return dict(lang = language, url = url, header_class = header_class)
+    main_team = Team.query.filter_by(position_ukr="Директор").first()
+    return dict(lang = lang, url = url, header_class = header_class, main_team = main_team)
 
 @app.route("/", methods = ["GET", "POST"])
 def index():
@@ -29,9 +32,10 @@ def index():
 def main():
     data = get_data(simple=False)
     video = Video.query.all().pop()
+    team = Team.query.all()
     return render_template("index.html",
-        video = video, active = "index_active", lang = data["lang"], 
-        url = data["url"], header_class = data["header_class"])
+        video = video, team = team, active = "index_active", lang = data["lang"],  
+        main_team = data["main_team"], url = data["url"], header_class = data["header_class"])
 
 @app.route("/galery")
 def galery():
@@ -40,14 +44,23 @@ def galery():
 @app.route("/galery/oblvideo")
 def oblvideo():
     data = get_data()
+    page = request.args.get("page")
+    if page and page.isdigit():
+        page = int(page)
+    else:
+        page = 1
+    video = Video.query.filter(Video.title.contains("oblvideo")).order_by(Video.id.desc())
+    pages = video.paginate(page = page, per_page = 3)
     return render_template("oblvideo.html", 
-        active = "galery_active", lang = data["lang"], url = data["url"], header_class = data["header_class"])
+        video = video, pages = pages, active = "galery_active", lang = data["lang"],
+        main_team = data["main_team"], url = data["url"], header_class = data["header_class"])
 
 @app.route("/galery/privatvideo")
 def privatvideo():
     data = get_data()
     return render_template("privatvideo.html", 
-        active = "galery_active", lang = data["lang"], url = data["url"], header_class = data["header_class"])
+        video = video, active = "galery_active", lang = data["lang"],
+        main_team = data["main_team"], url = data["url"], header_class = data["header_class"])
 
 @app.route("/orenda")
 def orenda():

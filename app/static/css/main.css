@@ -8563,7 +8563,7 @@ h1 {
     margin-right: -40px; }
     .preloader .puls::before, .preloader .puls::after {
       content: "";
-      border: 5px solid #323232;
+      border: 5px solid rgba(255, 255, 255, 0.8);
       width: 80px;
       height: 80px;
       -webkit-border-radius: 500px;
@@ -8705,68 +8705,69 @@ h1 {
       font-size: 36px;
       letter-spacing: 4px; }
 
-.my-main #my-carousel .carousel-item {
+.golovna #my-carousel .carousel-item {
   height: 100%; }
 
-.my-main #my-carousel .carousel-caption {
+.golovna #my-carousel .carousel-caption {
   margin-bottom: 200px; }
-  .my-main #my-carousel .carousel-caption a {
+  .golovna #my-carousel .carousel-caption a {
     background-color: #FF6B50;
     opacity: 0.8;
     border: none; }
-    .my-main #my-carousel .carousel-caption a:hover {
+    .golovna #my-carousel .carousel-caption a:hover {
       color: #ffffff;
       opacity: 1;
       -webkit-transition: opacity .25s ease;
       -o-transition: opacity .25s ease;
       transition: opacity .25s ease; }
 
-.my-main #my-carousel a:hover {
+.golovna #my-carousel a:hover {
   color: #FF6B50;
   -webkit-transition: color .25s ease;
   -o-transition: color .25s ease;
   transition: color .25s ease; }
 
-.my-main #my-carousel a svg {
+.golovna #my-carousel a svg {
   font-size: 30px; }
 
-.my-main #my-carousel ol li {
+.golovna #my-carousel ol li {
   width: 15px;
   height: 15px;
   -webkit-border-radius: 10px;
           border-radius: 10px;
   margin: 0 6px; }
-  .my-main #my-carousel ol li:hover {
+  .golovna #my-carousel ol li:hover {
     cursor: pointer; }
 
-.my-main #my-carousel ol .active {
+.golovna #my-carousel ol .active {
   background-color: #FF6B50; }
 
-.my-main .advantage {
+.golovna .advantage {
   text-align: center;
   background-color: #dddddd;
   -webkit-background-size: cover;
           background-size: cover;
   height: 300px; }
-  .my-main .advantage-header {
+  .golovna .advantage-header {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 20px; }
-  .my-main .advantage-item {
-    margin-top: 10px; }
-  .my-main .advantage .row {
+  .golovna .advantage-item {
+    margin-top: 5px;
+    margin-bottom: 5px; }
+  .golovna .advantage .row {
     padding-right: 20px;
     padding-left: 20px; }
 
-.my-main .last-video {
+.golovna .last-video {
   background-color: #444444;
   -webkit-background-size: cover;
           background-size: cover;
   text-align: center;
   color: white; }
-  .my-main .last-video-header h1 {
+  .golovna .last-video-header h1 {
     margin-top: 30px; }
-  .my-main .last-video-video {
+  .golovna .last-video-video {
     margin-top: 10px;
     margin-bottom: 20px;
     -webkit-box-orient: vertical;
@@ -8774,12 +8775,12 @@ h1 {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column; }
-    .my-main .last-video-video .title {
+    .golovna .last-video-video .title {
       font-weight: 300;
       letter-spacing: 3px;
       padding-right: 10px;
       padding-left: 10px; }
-  .my-main .last-video-button .btn {
+  .golovna .last-video-button .btn {
     width: auto;
     height: auto;
     font-size: 20px;
@@ -8789,46 +8790,94 @@ h1 {
     -webkit-border-radius: 10px;
             border-radius: 10px;
     margin: 0px 60px 30px; }
-    .my-main .last-video-button .btn:hover {
+    .golovna .last-video-button .btn:hover {
       opacity: 1;
       -webkit-transition: opacity .25s ease;
       -o-transition: opacity .25s ease;
       transition: opacity .25s ease; }
-  .my-main .last-video-button .main {
+  .golovna .last-video-button .main {
     background-color: #FF6B50; }
 
-.my-main .team {
+.golovna .team {
   background-color: white;
   padding-top: 30px; }
-  .my-main .team-header {
+  .golovna .team-header {
     margin-bottom: 20px; }
-  .my-main .team-carousel .owl-nav {
+  .golovna .team-carousel .owl-nav {
     position: absolute;
     width: 100%;
     top: 0px; }
-    .my-main .team-carousel .owl-nav button {
+    .golovna .team-carousel .owl-nav button {
       position: absolute;
       font-size: 26px;
       width: 50px;
       height: 50px; }
-      .my-main .team-carousel .owl-nav button:focus {
-        border-color: white;
+      .golovna .team-carousel .owl-nav button:focus {
         outline-color: white; }
-      .my-main .team-carousel .owl-nav button:hover {
+      .golovna .team-carousel .owl-nav button:hover {
         color: #FF6B50;
         -webkit-transition: color 0.25s ease;
         -o-transition: color 0.25s ease;
         transition: color 0.25s ease; }
-    .my-main .team-carousel .owl-nav .owl-prev {
+    .golovna .team-carousel .owl-nav .owl-prev {
       left: 0px; }
-    .my-main .team-carousel .owl-nav .owl-next {
+    .golovna .team-carousel .owl-nav .owl-next {
       right: 0px; }
-  .my-main .team-carousel .team-carousel-item {
+  .golovna .team-carousel .team-carousel-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: column;
+        -ms-flex-flow: column;
+            flex-flow: column;
     text-align: center;
     font-weight: 300;
     margin-bottom: 30px; }
-    .my-main .team-carousel .team-carousel-item svg {
+    .golovna .team-carousel .team-carousel-item .item-img {
+      display: block;
+      -webkit-align-self: center;
+          -ms-flex-item-align: center;
+              align-self: center; }
+      .golovna .team-carousel .team-carousel-item .item-img img {
+        width: 80px;
+        height: auto;
+        -webkit-border-radius: 10em;
+                border-radius: 10em; }
+    .golovna .team-carousel .team-carousel-item svg {
       font-size: 70px; }
+
+.oblvideo {
+  text-align: center;
+  padding-top: 20px; }
+  .oblvideo .oblvideo {
+    background-color: #aaaaaa; }
+    .oblvideo .oblvideo-video {
+      margin-top: 10px; }
+    .oblvideo .oblvideo .title {
+      font-weight: 300;
+      letter-spacing: 3px;
+      padding-right: 10px;
+      padding-left: 10px; }
+    .oblvideo .oblvideo ul {
+      margin-bottom: 0px;
+      padding-bottom: 20px;
+      padding-top: 20px; }
+      .oblvideo .oblvideo ul .page-item .page-link {
+        color: #000; }
+        .oblvideo .oblvideo ul .page-item .page-link:hover {
+          background-color: #FF6B50;
+          opacity: 0.7;
+          -webkit-transition: color 0.25s ease;
+          -o-transition: color 0.25s ease;
+          transition: color 0.25s ease; }
+      .oblvideo .oblvideo ul .disabled {
+        opacity: 0.7; }
+      .oblvideo .oblvideo ul .active .page-link {
+        background-color: #FF6B50;
+        border-color: #FF6B50; }
 
 .my-footer {
   background-color: #777777;
@@ -8905,14 +8954,14 @@ h1 {
       font-size: 11px; }
       .my-header .lang .nav-link, .my-simple-header .lang .nav-link {
         padding: 10px; }
-  .my-main #my-carousel .carousel-caption {
+  .golovna #my-carousel .carousel-caption {
     margin-bottom: 150px;
     font-size: 15px; }
-    .my-main #my-carousel .carousel-caption .utils-header {
+    .golovna #my-carousel .carousel-caption .utils-header {
       font-size: 23px; }
-  .my-main .last-video .title {
+  .golovna .last-video .title {
     max-width: 640px; }
-  .my-main .last-video iframe {
+  .golovna .last-video iframe {
     width: 640px;
     height: 360px; }
   .my-footer .foot {
@@ -8944,17 +8993,17 @@ h1 {
     .my-header .lang .nav-link, .my-simple-header .lang .nav-link {
       margin-top: 0px;
       padding-top: 0px; }
-  .my-main #my-carousel .carousel-caption {
+  .golovna #my-carousel .carousel-caption {
     margin-bottom: 100px;
     font-size: 15px; }
-    .my-main #my-carousel .carousel-caption .utils-header {
+    .golovna #my-carousel .carousel-caption .utils-header {
       font-size: 18px; }
-  .my-main .advantage-header {
+  .golovna .advantage-header {
     margin-top: 20px;
     margin-bottom: 0; }
-  .my-main .advantage-item {
+  .golovna .advantage-item {
     font-size: 15px; }
-  .my-main .last-video iframe {
+  .golovna .last-video iframe {
     width: 352px;
     height: 240px; }
   .my-footer .foot-name {
@@ -8974,29 +9023,34 @@ h1 {
     margin-bottom: 5px; }
   .my-header .sm-h-phone, .my-simple-header .sm-h-phone {
     font-size: 14px; }
-  .my-main #my-carousel .carousel-caption {
+  .golovna #my-carousel .carousel-caption {
     margin-top: 10px;
     margin-bottom: 50px;
     padding-bottom: 5px;
     font-size: 12px; }
-    .my-main #my-carousel .carousel-caption .utils-header {
+    .golovna #my-carousel .carousel-caption .utils-header {
       font-size: 14px; }
-  .my-main #my-carousel ol {
+  .golovna #my-carousel ol {
     margin-bottom: 0px; }
-    .my-main #my-carousel ol li {
+    .golovna #my-carousel ol li {
       width: 10px;
       height: 10px; }
-  .my-main .advantage-item {
+  .golovna .advantage-item {
     font-size: 14px; }
-  .my-main .last-video .title h6 {
+  .golovna .last-video .title h6 {
     font-size: 14px; }
-  .my-main .last-video iframe {
+  .golovna .last-video iframe {
     width: 240px;
     height: 180px; }
-  .my-main .last-video-button .btn {
+  .golovna .last-video-button .btn {
     font-size: 14px; }
   .my-footer .foot-name {
-    font-size: 17px; } }
+    font-size: 17px; }
+  .to-top {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px; } }
 
 /* Custom, Iphoine Retina */
 /*======== Mobile First ========*/

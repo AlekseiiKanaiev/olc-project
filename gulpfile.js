@@ -62,7 +62,7 @@ gulp.task("browser-sync", function(){
     browserSync({
         server: {
             baseDir: "./app",
-            index: "./templates/g-index.html"
+            index: "./templates/oblvideo.html"
         },
         notify: false
     });

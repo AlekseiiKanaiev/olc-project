@@ -30,34 +30,20 @@ class Video(db.Model):
 
     def __repr__(self):
 
-        return "Video id: {}, title: {}, slug: {}".format(self.id, self.title, self.slug)
+        return "Video id: {}, title: {}".format(self.id, self.title)
 
+class Team(db.Model):
 
-def add_video(title, body):
-    new_video = Video(title = title, body = body)
-    db.session.add(new_video)
-    db.session.commit()
+    id = db.Column(db.Integer, primary_key = True)
+    position_ukr = db.Column(db.String(140))
+    position_rus = db.Column(db.String(140))
+    full_name_ukr = db.Column(db.String(140))
+    full_name_rus = db.Column(db.String(140))
+    img_name = db.Column(db.String(140))
+    phone = db.Column(db.String(140))
 
-def del_video(title):
-    video = Video.query.filter_by(title = title).first()
-    db.session.delete(video)
-    db.session.commit()
+    def __init__(self, *args, **kwargs):
+        super(Team, self).__init__(*args, **kwargs)
 
-# all_video = Video.query.filter_by(slug = None).all()
-# # print(all_video)
-# for video in all_video:
-#     video.generate_slug()
-# # print(all_video)
-# db.session.commit()
-
-# db.create_all()
-# del_post("The first video")
-# del_video("The second video")
-# 
-# add_video(title = "The first video",
-#         body = "UGUUhXKZ8Vk")
-# add_post("First post!", "This is first post")
-
-
-# for video in Video.query.all():
-#     print(video.title, video.body)    
+    def __repr__(self):
+        return "Team id: {}, full_name: {}".format(self.id, self.full_name)

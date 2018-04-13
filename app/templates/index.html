@@ -3,7 +3,7 @@
     Golovna
 {% endblock %}
 {% block main %}
-    <div class="section my-main">
+    <div class="section golovna">
         <div class="carousel slide d-block d-lg-none" id="my-carousel" data-ride="carousel">
             <div class="carousel-inner">
                 <ol class="carousel-indicators">
@@ -12,7 +12,7 @@
                     <li data-target="#my-carousel" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="../static/img/bg1.jpg" alt="Первый слайд">
+                    <img class="d-block w-100" src="../static/img/bg1.jpg" alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'">
                     <div class="carousel-caption">
                         <div class="col-12 col-sm-6 col-md-6 utils" >
                             <h3 class="utils-header">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="../static/img/bg2.jpg" alt="Второй слайд">
+                    <img class="d-block w-100" src="../static/img/bg2.jpg" alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'">
                     <div class="carousel-caption">
                         <div class="col-12 col-sm-6 col-md-6 utils">
                             <h3 class="utils-header">
@@ -42,7 +42,7 @@
                      </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="../static/img/bg3.jpg" alt="Третий слайд">
+                    <img class="d-block w-100" src="../static/img/bg3.jpg" alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'">
                     <div class="carousel-caption">
                         <div class="col-12 col-sm-6 col-md-6 utils">
                             <h3 class="utils-header">
@@ -136,14 +136,23 @@
             </div>
             <div class="row">
                 <div class="owl-carousel team-carousel" id = "team-carousel">
+                    {% for item in team %}
                     <div class="team-carousel-item">
-                        <i class="far fa-user"></i>
+                        <figure class="item-img">
+                        {% if item.img_name %}
+                            <img class="team-img" src="../static/img/team/{{item.img_name}}"
+                            alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'">
+                        {% else %}
+                            <i class="far fa-user"></i>
+                        {% endif %}
+                        </figure>
                         <div class="info">
-                            Директор <br/>
-                            Іванов Іван Іванович
+                            {{ item.position_ukr if lang == "ukr" else item.position_rus }} <br/>
+                            {{ item.full_name_ukr if lang == "ukr" else item.full_name_rus }}
                         </div>
                     </div>
-                    <div class="team-carousel-item">
+                    {% endfor %}
+                    <!-- <div class="team-carousel-item">
                         <i class="far fa-user"></i>
                         <div class="info">
                             {{"Головний бугалтер" if lang == "ukr" else "Главный бухгалтер"}}<br/>
@@ -163,7 +172,7 @@
                             {{"Фахівець" if lang == "ukr" else "Специалист"}}<br/>
                             Іванов Іван Іванович
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

@@ -54,6 +54,7 @@ $(document).ready(function(){
     $("#team-carousel").owlCarousel({
         loop:true,
         nav:true,
+        dots:false,
         smartSpeed:700,
         navText:[
             '<i class="fas fa-angle-left"></i>',
@@ -65,12 +66,17 @@ $(document).ready(function(){
                 items:1,
                 nav:true
             },
-            768:{
+            738:{
                 items:2,
                 nav:true
             }
         }
     })
+    
+    if ($(".page-link:contains('None')")){
+        $(".page-link:contains('None')").text("...").removeAttr("href")
+
+    }
 
     //seting to-top button
     $(window).scroll(function(){
@@ -84,9 +90,12 @@ $(document).ready(function(){
         $("html, body").stop().animate({scrollTop:0}, "slow", "swing")
     })
 
-    //seting preloader
+    // seting preloader
+    // if ($("#video_background")){
+
+    // }
     $(window).on("load", function(){
-        $(".preloader").delay(1000).fadeOut("slow")
+        $(".preloader").delay(500).fadeOut("fast")
     })
 });
 

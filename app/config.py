@@ -12,7 +12,3 @@ class Configurations(object):
     # SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://root:1@localhost/test"
     # SQLALCHEMY_DATABASE_URI = "mysql://localhost/test1"
     SECRET_KEY = 'super secret key'
-    LANGUAGES = [
-        'ru',
-        'uk'
-    ]
