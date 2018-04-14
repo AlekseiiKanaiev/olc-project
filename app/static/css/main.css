@@ -8780,6 +8780,12 @@ h1 {
       letter-spacing: 3px;
       padding-right: 10px;
       padding-left: 10px; }
+    .golovna .last-video-video iframe {
+      background-image: url(../img/loader.gif);
+      -webkit-background-size: 50px 50px;
+              background-size: 50px;
+      background-repeat: no-repeat;
+      background-position: center; }
   .golovna .last-video-button .btn {
     width: auto;
     height: auto;
@@ -8863,6 +8869,12 @@ h1 {
     background-color: #aaaaaa; }
     .oblvideo-list-video {
       margin-top: 20px; }
+      .oblvideo-list-video iframe {
+        background-image: url(../img/loader.gif);
+        -webkit-background-size: 50px 50px;
+                background-size: 50px;
+        background-repeat: no-repeat;
+        background-position: center; }
     .oblvideo-list .title {
       font-weight: 300;
       letter-spacing: 3px;
@@ -8908,6 +8920,12 @@ h1 {
       font-size: 14px; }
     .my-footer .foot .fa-mobile-alt {
       margin: 0 12px 0 4px; }
+    .my-footer .foot-map iframe {
+      background-image: url(../img/loader.gif);
+      -webkit-background-size: 50px 50px;
+              background-size: 50px;
+      background-repeat: no-repeat;
+      background-position: center; }
 
 .to-top {
   position: fixed;

@@ -17,6 +17,12 @@ h1
     font-weight: bold
     text-transform: uppercase
 
+@mixin loader
+    background-image: url(../img/loader.gif)
+    background-size: 50px
+    background-repeat: no-repeat
+    background-position: center    
+
 @mixin opacity($opacity)
     opacity: $opacity/100
     filter: alpha(opacity = $opacity)
@@ -209,6 +215,9 @@ h1
                 padding: 
                     right: 10px
                     left: 10px
+            iframe
+                @include loader
+                
         &-button
             // padding-bottom: 30px
             .btn 
@@ -287,6 +296,8 @@ h1
         background-color: #aaaaaa
         &-video
             margin-top: 20px
+            iframe
+                @include loader
         .title
             font-weight: 300
             letter-spacing: 3px
@@ -337,6 +348,8 @@ h1
         .fa-mobile-alt
             margin: 0 12px 0 4px
         &-map
+            iframe
+                @include loader
 
 .to-top
     position: fixed
