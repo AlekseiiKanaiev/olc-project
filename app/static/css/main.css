@@ -8547,6 +8547,9 @@ h1 {
   font-weight: bold;
   text-transform: uppercase; }
 
+main {
+  text-align: center; }
+
 .preloader {
   position: fixed;
   top: 0px;
@@ -8856,7 +8859,6 @@ h1 {
       font-size: 70px; }
 
 .oblvideo {
-  text-align: center;
   padding-top: 20px; }
   .oblvideo .intro .row {
     padding-left: 15px;
@@ -8898,6 +8900,40 @@ h1 {
       .oblvideo-list ul .active .page-link {
         background-color: #FF6B50;
         border-color: #FF6B50; }
+
+.contacts {
+  background-color: #aaaaaa; }
+  .contacts-main {
+    background-color: #fff; }
+    .contacts-main .row {
+      padding-left: 15px;
+      padding-right: 15px; }
+    .contacts-main-header {
+      width: 100%;
+      padding-top: 20px; }
+    .contacts-main-intro {
+      width: 100%; }
+    .contacts-main-person {
+      width: 100%;
+      padding-bottom: 20px; }
+      .contacts-main-person-img, .contacts-main-person-info {
+        margin: 10px; }
+        .contacts-main-person-img img, .contacts-main-person-info img {
+          width: 80px;
+          height: 80px;
+          -webkit-border-radius: 10em;
+                  border-radius: 10em; }
+  .contacts-mail {
+    padding-top: 20px; }
+    .contacts-mail-intro {
+      width: 100%; }
+    .contacts-mail-form {
+      width: 100%; }
+      .contacts-mail-form label {
+        margin-bottom: 0px; }
+      .contacts-mail-form-msg textarea {
+        text-align: left;
+        height: 120px; }
 
 .my-footer {
   background-color: #777777;

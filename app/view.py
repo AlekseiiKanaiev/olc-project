@@ -58,8 +58,15 @@ def oblvideo():
 @app.route("/galery/privatvideo")
 def privatvideo():
     data = get_data()
+    page = request.args.get("page")
+    if page and page.isdigit():
+        page = int(page)
+    else:
+        page = 1
+    video = Video.query.filter(Video.title.contains("privatvideo")).order_by(Video.id.desc())
+    pages = video.paginate(page = page, per_page = 3)
     return render_template("privatvideo.html", 
-        video = video, active = "galery_active", lang = data["lang"],
+        video = video, pages = pages, active = "galery_active", lang = data["lang"],
         main_team = data["main_team"], url = data["url"], header_class = data["header_class"])
 
 @app.route("/orenda")
@@ -80,10 +87,7 @@ def aboutus():
 
 @app.route("/contacts")
 def contacts():
-    return render_template("contacts.html", active = "contacts_active")
+    data = get_data()
 
-
-@app.route("/video")
-def video():
-    video = Video.query.all()
-    return render_template("video.html", video = video)
+    return render_template("contacts.html", active = "contacts_active", lang = data["lang"],
+        main_team = data["main_team"], url = data["url"], header_class = data["header_class"])

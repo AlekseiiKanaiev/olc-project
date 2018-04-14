@@ -17,6 +17,9 @@ h1
     font-weight: bold
     text-transform: uppercase
 
+main 
+    text-align: center  
+
 @mixin loader
     background-image: url(../img/loader.gif)
     background-size: 50px
@@ -280,7 +283,6 @@ h1
                 .info
 
 .oblvideo
-    text-align: center
     padding-top: 20px
     .intro
         .row
@@ -324,8 +326,44 @@ h1
                     background-color: $accent-color
                     border-color: $accent-color
                 
+.contacts
+    background-color: #aaaaaa
+    &-main
+        background-color: #fff
+        .row
+            padding: 
+                left: 15px
+                right: 15px
+        &-header
+            width: 100%
+            padding-top: 20px
+        &-intro
+            width: 100%
+        &-person
+            width: 100%
+            padding-bottom: 20px
+            &-img, &-info
+                margin: 10px
+                img
+                    width: 80px
+                    height: 80px
+                    border-radius: 10em
+    &-mail
+        padding-top: 20px
+        &-intro
+            width: 100%
+        &-form
+            width: 100%
+            label
+                margin-bottom: 0px
+            &-msg
+                textarea
+                    text-align: left
+                    height: 120px
 
-                
+        
+
+
 .my-footer
     background-color: #777777
     padding: 25px 0 20px 0
