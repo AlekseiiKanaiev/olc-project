@@ -8852,30 +8852,38 @@ h1 {
 .oblvideo {
   text-align: center;
   padding-top: 20px; }
-  .oblvideo .oblvideo {
+  .oblvideo .intro .row {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .oblvideo .intro-header {
+    width: 100%; }
+  .oblvideo .intro-body .olc {
+    white-space: nowrap; }
+  .oblvideo-list {
     background-color: #aaaaaa; }
-    .oblvideo .oblvideo-video {
-      margin-top: 10px; }
-    .oblvideo .oblvideo .title {
+    .oblvideo-list-video {
+      margin-top: 20px; }
+    .oblvideo-list .title {
       font-weight: 300;
       letter-spacing: 3px;
       padding-right: 10px;
       padding-left: 10px; }
-    .oblvideo .oblvideo ul {
+    .oblvideo-list ul {
       margin-bottom: 0px;
       padding-bottom: 20px;
       padding-top: 20px; }
-      .oblvideo .oblvideo ul .page-item .page-link {
+      .oblvideo-list ul .page-item .page-link {
         color: #000; }
-        .oblvideo .oblvideo ul .page-item .page-link:hover {
+        .oblvideo-list ul .page-item .page-link:hover {
           background-color: #FF6B50;
+          border-color: #FF6B50;
           opacity: 0.7;
           -webkit-transition: color 0.25s ease;
           -o-transition: color 0.25s ease;
           transition: color 0.25s ease; }
-      .oblvideo .oblvideo ul .disabled {
+      .oblvideo-list ul .disabled {
         opacity: 0.7; }
-      .oblvideo .oblvideo ul .active .page-link {
+      .oblvideo-list ul .active .page-link {
         background-color: #FF6B50;
         border-color: #FF6B50; }
 
@@ -8964,6 +8972,11 @@ h1 {
   .golovna .last-video iframe {
     width: 640px;
     height: 360px; }
+  .oblvideo .title {
+    max-width: 640px; }
+    .oblvideo .title iframe {
+      width: 640px;
+      height: 360px; }
   .my-footer .foot {
     margin-top: 5px;
     font-size: 16px; }
@@ -9006,6 +9019,11 @@ h1 {
   .golovna .last-video iframe {
     width: 352px;
     height: 240px; }
+  .oblvideo iframe {
+    width: 352px;
+    height: 240px; }
+  .oblvideo ul {
+    font-size: 15px; }
   .my-footer .foot-name {
     text-align: center; }
   .my-footer .foot-map {
@@ -9044,6 +9062,16 @@ h1 {
     height: 180px; }
   .golovna .last-video-button .btn {
     font-size: 14px; }
+  .oblvideo .title h6 {
+    font-size: 14px; }
+  .oblvideo iframe {
+    width: 240px;
+    height: 180px; }
+  .oblvideo ul {
+    font-size: 14px;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
   .my-footer .foot-name {
     font-size: 17px; }
   .to-top {

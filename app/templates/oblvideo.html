@@ -8,27 +8,30 @@
         <div class="container intro">
             <div class="row">
                 <div class="intro-header">
-                    {% if lang == "ukr" %}
-                        <h1>
-                            Відео для Харківської обл ради
-                        </h1>
-                        <p>
-                            КП ХОР <span class="olc">«ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР»</span> вже довгий час знімає відео для Харківської обласної ради. Наші фахівці фіксують на відео офіційні та неофіційні заходи за участю керівництва облради, а також проводять онлайн-трансляції та записують засідання конкурсних комісій.
-                        </p>
-                    {% else %}
-                        <h1>Видео для харьковского облсовета</h1>
-                        <p>
-                            КП ХОС <span class="olc">«ОБЛАСНОЙ ЛОГИСТИЧЕСКИЙ ЦЕНТР»</span> уже долгое время снимает видео для Харьковского областного совета. Наши специалисты фиксируют на видео официальные и неофициальные мероприятия с участием руководства облсовета, а также проводят онлайн-трансляции и записывают заседания конкурсных комиссий.
-                        </p>
-                    {% endif %}
+                    <h1>
+                        {{"Відео для Харківської обл ради" 
+                        if lang == "ukr" else
+                        "Видео для харьковского облсовета"}}
+                    </h1>
+                </div>
+                <div class="intro-body">
+                {% if lang == "ukr" %}
+                    <p>
+                        КП ХОР <span class="olc">«ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР»</span> вже довгий час знімає відео для Харківської обласної ради. Наші фахівці фіксують на відео офіційні та неофіційні заходи за участю керівництва облради, а також проводять онлайн-трансляції та записують засідання конкурсних комісій.
+                    </p>
+                {% else %}
+                    <p>
+                        КП ХОС <span class="olc">«ОБЛАСНОЙ ЛОГИСТИЧЕСКИЙ ЦЕНТР»</span> уже долгое время снимает видео для Харьковского областного совета. Наши специалисты фиксируют на видео официальные и неофициальные мероприятия с участием руководства облсовета, а также проводят онлайн-трансляции и записывают заседания конкурсных комиссий.
+                    </p>
+                {% endif %}
                 </div>
             </div>
         </div>
         {% if video %}
-            <div class="container-fluid oblvideo">
+            <div class="container-fluid oblvideo-list">
             {% for item in pages.items %}
                 <div class="row d-flex justify-content-center">
-                    <div class="oblvideo-video ">
+                    <div class="oblvideo-list-video ">
                         <div class="title">
                             <h6>{{ item.body }}</h6> 
                         </div>
@@ -36,7 +39,7 @@
                     </div>
                 </div>
             {% endfor %}
-                <nav aria-label="Page navigation example">
+                <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center">
                         <li class="page-item {{ 'disabled' if not pages.has_prev }}">
                             <a class="page-link" href="./oblvideo?lang={{ lang }}&page={{ pages.prev_num }}" aria-label="Previous">

@@ -144,10 +144,6 @@ h1
             // font-weight: normal
             letter-spacing: 4px
 
-// .carousel
-//     &::before
-//         display: none
-    
 .golovna
     #my-carousel
         .carousel-item
@@ -277,10 +273,20 @@ h1
 .oblvideo
     text-align: center
     padding-top: 20px
-    .oblvideo
+    .intro
+        .row
+            padding: 
+                left: 15px
+                right: 15px
+        &-header
+            width: 100%
+        &-body
+            .olc
+                white-space: nowrap
+    &-list
         background-color: #aaaaaa
         &-video
-            margin-top: 10px
+            margin-top: 20px
         .title
             font-weight: 300
             letter-spacing: 3px
@@ -297,9 +303,9 @@ h1
                     color: #000
                     &:hover
                         background-color: $accent-color
+                        border-color: $accent-color
                         opacity: 0.7
                         transition: color 0.25s ease
-                
             .disabled
                 opacity: 0.7
             .active
@@ -307,8 +313,8 @@ h1
                     background-color: $accent-color
                     border-color: $accent-color
                 
-                    
 
+                
 .my-footer
     background-color: #777777
     padding: 25px 0 20px 0
