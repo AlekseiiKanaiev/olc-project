@@ -91,12 +91,10 @@ $(document).ready(function(){
     })
 
     // seting preloader
-    // if ($("#video_background")){
-
-    // }
-    $(window).on("load", function(){
+    $("header").ready(function(){
         $(".preloader").delay(500).fadeOut("fast")
     })
+
 });
 
 //func to change lang without reload
