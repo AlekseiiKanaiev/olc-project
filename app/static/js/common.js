@@ -73,12 +73,12 @@ $(document).ready(function(){
         }
     })
     
-    if ($(".page-link:contains('None')")){
-        $(".page-link:contains('None')").text("...").removeAttr("href")
+    //setting pagination bar
+    $(".page-link:contains('None')").text("...").removeAttr("href")
 
-    }
+    // $("#")
 
-    //seting to-top button
+    //setting to-top button
     $(window).scroll(function(){
         if ($(this).scrollTop() > $(this).height()/2){
             $(".to-top").addClass("active")
@@ -94,7 +94,6 @@ $(document).ready(function(){
     $("header").ready(function(){
         $(".preloader").delay(500).fadeOut("fast")
     })
-
 });
 
 //func to change lang without reload

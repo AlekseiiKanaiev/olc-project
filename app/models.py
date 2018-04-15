@@ -46,4 +46,16 @@ class Team(db.Model):
         super(Team, self).__init__(*args, **kwargs)
 
     def __repr__(self):
-        return "Team id: {}, full_name: {}".format(self.id, self.full_name)
+        return "Team id: {}, full_name: {}".format(self.id, self.full_name_ukr)
+
+class Utils(db.Model):
+
+    id = db.Column(db.Integer, primary_key = True)
+    util_name_ukr = db.Column(db.String(140), unique = True)
+    util_name_rus = db.Column(db.String(140), unique = True)
+
+    def __init__(self, *args, **kwargs):
+        super(Utils, self).__init__(*args, **kwargs)
+
+    def __repr__(self):
+        return "Util_name: {}".format(self.util_name)

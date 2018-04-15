@@ -1,17 +1,12 @@
 #!/usr/bin/python3.5
-from flask import render_template, request, redirect, url_for
-from app import app
+from flask import render_template, request, redirect, url_for, flash
+from app import app, mail
 from sqlalchemy import desc
-# from flask_babel import gettext
+from flask_mail import Message
+import re
 from config import Configurations
-from models import Video, Team
+from models import Video, Team, Utils
 
-# # babel translate
-# @babel.localeselector
-# def get_local():
-#     return "ru"
-# #     return "uk"
-#     # return  request.accept_languages.best_match(app.config["LANGUAGES"])
 
 def get_data(simple = True):
     language = request.args.get("lang")
@@ -23,6 +18,26 @@ def get_data(simple = True):
     header_class = "my-simple-header" if simple else "my-header"
     main_team = Team.query.filter_by(position_ukr="Директор").first()
     return dict(lang = lang, url = url, header_class = header_class, main_team = main_team)
+
+def send_email():
+    name = request.form.get("inputName")
+    email = request.form.get("inputEmail")
+    phone = request.form.get("inputPhone")
+    select = request.form.get("inputSelect")
+    form_msg = request.form.get("inputMsg")
+    pattern = r"\d{10}"
+    if len(name.split())>1 and phone.isdigit() and re.findall(pattern, phone):
+        msg = Message()
+        msg.body = "Имя заказчика: "+name\
+                +"\n"+"E-mail заказчика: "+email\
+                +"\n"+"Номер телефона заказчика: +38"+phone\
+                +"\n"+"Выбранная услуга: "+select\
+                +"\n"+"Дополнительная информация: "+form_msg
+        # msg.sender = "oleksii.kanaiev@gmail.com"
+        msg.recipients = ["alexey.kanaev.ua@gmail.com"]
+        mail.send(msg)
+        return True
+    return False
 
 @app.route("/", methods = ["GET", "POST"])
 def index():
@@ -39,7 +54,7 @@ def main():
 
 @app.route("/galery")
 def galery():
-    return render_template("galery.html", active = "galery_active")
+    return redirect(url_for('privatvideo'))
 
 @app.route("/galery/oblvideo")
 def oblvideo():
@@ -71,7 +86,7 @@ def privatvideo():
 
 @app.route("/orenda")
 def orenda():
-    return render_template("orenda.html", active = "orenda_active")
+    return redirect(url_for('orendatrans'))
 
 @app.route("/orenda/orendamest")
 def orendamest():
@@ -85,9 +100,18 @@ def orendatrans():
 def aboutus():
     return render_template("aboutus.html", active = "aboutus_active")
 
-@app.route("/contacts")
+@app.route("/contacts", methods = ["POST", "GET"])
 def contacts():
     data = get_data()
-
-    return render_template("contacts.html", active = "contacts_active", lang = data["lang"],
+    error = None
+    
+    if request.method == "POST":
+        error = "Не вірно заповнена форма" if data["lang"] == "ukr" else "Не правильно заполнена форма"
+        if send_email():
+            error = None
+            flash("Повідомлення відправленно" if data["lang"] == "ukr" else "Cooбщение отправленно") 
+    utils = Utils.query.all()
+    if error : flash(error)
+    return render_template("contacts.html",
+        utils = utils, error = error, active = "contacts_active", lang = data["lang"],
         main_team = data["main_team"], url = data["url"], header_class = data["header_class"])

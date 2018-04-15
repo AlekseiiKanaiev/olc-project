@@ -152,6 +152,7 @@ main
             font-size: 36px
             // font-weight: normal
             letter-spacing: 4px
+            text-shadow: 0 0 0.2rem rgba($accent-color, 0.7)
 
 .golovna
     #my-carousel
@@ -330,6 +331,8 @@ main
     background-color: #aaaaaa
     &-main
         background-color: #fff
+        .olc
+            white-space: nowrap
         .row
             padding: 
                 left: 15px
@@ -349,9 +352,10 @@ main
                     height: 80px
                     border-radius: 10em
     &-mail
-        padding-top: 20px
+        padding: 20px 40px
         &-intro
             width: 100%
+
         &-form
             width: 100%
             label
@@ -360,9 +364,20 @@ main
                 textarea
                     text-align: left
                     height: 120px
-
-        
-
+                    resize: none
+            input, select, textarea, button
+                &:focus
+                    border-color: $accent-color
+                    box-shadow: 0 0 0 0.2rem rgba($accent-color, 0.7)
+            button
+                background-color: $accent-color
+                opacity: 0.8
+                border: none   
+                &:hover
+                    background-color: $accent-color
+                    border: none 
+                    opacity: 1
+                    transition: opacity 0.25s ease        
 
 .my-footer
     background-color: #777777

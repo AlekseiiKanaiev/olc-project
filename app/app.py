@@ -6,6 +6,7 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
+from flask_mail import Mail
 
 from config import Configurations
 
@@ -24,5 +25,7 @@ manager.add_command("db", MigrateCommand)
 
 ### ADMIN ###
 admin = Admin(app)
-from models import Video, Team
-admin.add_views(ModelView(Video, db.session), ModelView(Team, db.session))
+from models import Video, Team, Utils
+admin.add_views(ModelView(Video, db.session), ModelView(Team, db.session), ModelView(Utils, db.session))
+
+mail = Mail(app)

@@ -8706,7 +8706,8 @@ main {
     margin-top: 100px; }
     .my-header .description h1, .my-simple-header .description h1 {
       font-size: 36px;
-      letter-spacing: 4px; }
+      letter-spacing: 4px;
+      text-shadow: 0 0 0.2rem rgba(255, 107, 80, 0.7); }
 
 .golovna #my-carousel .carousel-item {
   height: 100%; }
@@ -8905,6 +8906,8 @@ main {
   background-color: #aaaaaa; }
   .contacts-main {
     background-color: #fff; }
+    .contacts-main .olc {
+      white-space: nowrap; }
     .contacts-main .row {
       padding-left: 15px;
       padding-right: 15px; }
@@ -8924,7 +8927,7 @@ main {
           -webkit-border-radius: 10em;
                   border-radius: 10em; }
   .contacts-mail {
-    padding-top: 20px; }
+    padding: 20px 40px; }
     .contacts-mail-intro {
       width: 100%; }
     .contacts-mail-form {
@@ -8933,7 +8936,23 @@ main {
         margin-bottom: 0px; }
       .contacts-mail-form-msg textarea {
         text-align: left;
-        height: 120px; }
+        height: 120px;
+        resize: none; }
+      .contacts-mail-form input:focus, .contacts-mail-form select:focus, .contacts-mail-form textarea:focus, .contacts-mail-form button:focus {
+        border-color: #FF6B50;
+        -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 107, 80, 0.7);
+                box-shadow: 0 0 0 0.2rem rgba(255, 107, 80, 0.7); }
+      .contacts-mail-form button {
+        background-color: #FF6B50;
+        opacity: 0.8;
+        border: none; }
+        .contacts-mail-form button:hover {
+          background-color: #FF6B50;
+          border: none;
+          opacity: 1;
+          -webkit-transition: opacity 0.25s ease;
+          -o-transition: opacity 0.25s ease;
+          transition: opacity 0.25s ease; }
 
 .my-footer {
   background-color: #777777;
