@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-    Golovna
+    {{"Головна" if lang == "ukr" else "Главная"}}
 {% endblock %}
 {% block main %}
     <div class="section golovna">
@@ -153,27 +153,6 @@
                         </div>
                     </div>
                     {% endfor %}
-                    <!-- <div class="team-carousel-item">
-                        <i class="far fa-user"></i>
-                        <div class="info">
-                            {{"Головний бугалтер" if lang == "ukr" else "Главный бухгалтер"}}<br/>
-                            Іванов Іван Іванович
-                        </div>
-                    </div>
-                    <div class="team-carousel-item">
-                        <i class="far fa-user"></i>
-                        <div class="info">
-                            {{"Фахівець" if lang == "ukr" else "Специалист"}}<br/>
-                            Іванов Іван Іванович
-                        </div>
-                    </div>
-                    <div class="team-carousel-item">
-                        <i class="far fa-user"></i>
-                        <div class="info">
-                            {{"Фахівець" if lang == "ukr" else "Специалист"}}<br/>
-                            Іванов Іван Іванович
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>

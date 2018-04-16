@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Contacts
+    {{"Контакти" if lang == "ukr" else "Контакты"}}
 {% endblock %}
 {% block main %}
     <div class="section contacts">
@@ -51,61 +51,62 @@
             </div>
             <div class="row">
                 {% if get_flashed_messages()%}
-                    <div class="alert {{'alert-danger' if error else 'alert-success'}} contacts-mail-alert w-100" role="alert">
-                        {{ get_flashed_messages() | join(" ") }}
-                    </div>
+                <div class="alert {{'alert-danger' if error else 'alert-success'}} contacts-mail-alert w-100" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
                 {% endif %}
-                <!-- <div class="col"> -->
-                    <form action="{{ url_for('contacts') }}" method="post" class="contacts-mail-form d-flex justify-content-center">
-                        <div class="form-row align-items-center">
-                            <div class="col-md-6 col-sm-12">
-                                <div class="form-group contacts-mail-form-name">
-                                    <label for="inputName">{{"П.І.Б." if lang == "ukr" else "Ф.И.О."}}</label>
-                                    <input required type="text" class="form-control" id = "inputName" name = "inputName" 
-                                    placeholder="{{'Як до вас звертатись?' if lang == 'ukr' else 'Как к вам обращаться?'}}">
-                                    <div class="invalid-feedback">
-                                        Please choose a username.
-                                    </div>
-                                </div>
-                                <div class="form-group contacts-mail-form-email">
-                                    <label for="inputEmail">E-mail</label>
-                                    <input required type="email" class="form-control" id = "inputEmail" name = "inputEmail" 
-                                    placeholder="{{'Ваша електрона пошта?' if lang == 'ukr' else 'Ваша электронная почта?'}}">
-                                </div>
-                                <div class="form-group contacts-mail-form-phone">
-                                    <label for="inputPhone">{{"Номер телефону" if lang == "ukr" else "Номер телефона"}}</label>
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">+38</div>
-                                        </div>
-                                        <input required type="tel" class="form-control" id = "inputPhone" name = "inputPhone" 
-                                        placeholder="{{'Ваш номер телефону?' if lang == 'ukr' else 'Ваш номер телефона?'}}">
-                                    </div>
+                <form action="/contacts?lang={{lang}}" method="post" class="contacts-mail-form d-flex justify-content-center">
+                    <!-- <div class="contacts-mail-success">
+                        <span><h2>{{ "Дякуємо за заказ" if lang == "ukr" else "Спасибо за заказ" }}</h2></span> 
+                    </div> -->
+                    <div class="form-row align-items-center">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group contacts-mail-form-name">
+                                <label for="inputName">{{"П.І.Б." if lang == "ukr" else "Ф.И.О."}}</label>
+                                <input required type="text" class="form-control" id = "inputName" name = "inputName" 
+                                placeholder="{{'Як до вас звертатись?' if lang == 'ukr' else 'Как к вам обращаться?'}}">
+                                <div class="invalid-feedback">
+                                    Please choose a username.
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-12">
-                                <div class="form-group contacts-mail-form-select">
-                                    <label for="inputSelect">{{"Вид послуги" if lang == "ukr" else "Вид услуги"}}</label>
-                                    <select required type="text" class="form-control" id = "inputSelect" name = "inputSelect">
-                                        <option selected disabled value="">{{"Виберіть послугу" if lang == "ukr" else "Выбарите услугу"}}</option>
-                                        {% for item in utils %}
-                                        <option value="{{ item.util_name_ukr if lang == "ukr" else item.util_name_rus }}">
-                                            {{ item.util_name_ukr if lang == "ukr" else item.util_name_rus }}
-                                        </option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                                <div class="form-group contacts-mail-form-msg">
-                                    <label for="inputMsg">{{"Повідомлення" if lang == "ukr" else "Сообщение"}}</label>
-                                    <textarea type="text" class="form-control" id = "inputMsg" name = "inputMsg"></textarea>
-                                </div>
+                            <div class="form-group contacts-mail-form-email">
+                                <label for="inputEmail">E-mail</label>
+                                <input required type="email" class="form-control" id = "inputEmail" name = "inputEmail" 
+                                placeholder="{{'Ваша електрона пошта?' if lang == 'ukr' else 'Ваша электронная почта?'}}">
                             </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary">{{"Надіслати" if lang == "ukr" else "Отправить"}}</button>
+                            <div class="form-group contacts-mail-form-phone">
+                                <label for="inputPhone">{{"Номер телефону" if lang == "ukr" else "Номер телефона"}}</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">+38</div>
+                                    </div>
+                                    <input required type="tel" class="form-control" id = "inputPhone" name = "inputPhone" 
+                                    placeholder="{{'Ваш номер телефону?' if lang == 'ukr' else 'Ваш номер телефона?'}}">
+                                </div>
                             </div>
                         </div>
-                    </form>
-                <!-- </div> -->
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group contacts-mail-form-select">
+                                <label for="inputSelect">{{"Вид послуги" if lang == "ukr" else "Вид услуги"}}</label>
+                                <select required type="text" class="form-control" id = "inputSelect" name = "inputSelect">
+                                    <option selected disabled value="">{{"Виберіть послугу" if lang == "ukr" else "Выбeрите услугу"}}</option>
+                                    {% for item in utils %}
+                                    <option value="{{ item.util_name_ukr if lang == "ukr" else item.util_name_rus }}">
+                                        {{ item.util_name_ukr if lang == "ukr" else item.util_name_rus }}
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group contacts-mail-form-msg">
+                                <label for="inputMsg">{{"Повідомлення" if lang == "ukr" else "Сообщение"}}</label>
+                                <textarea type="text" class="form-control" id = "inputMsg" name = "inputMsg"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">{{"Надіслати" if lang == "ukr" else "Отправить"}}</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

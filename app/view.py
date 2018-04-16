@@ -7,7 +7,6 @@ import re
 from config import Configurations
 from models import Video, Team, Utils
 
-
 def get_data(simple = True):
     language = request.args.get("lang")
     if language and language == "rus":
@@ -26,8 +25,9 @@ def send_email():
     select = request.form.get("inputSelect")
     form_msg = request.form.get("inputMsg")
     pattern = r"\d{10}"
-    if len(name.split())>1 and phone.isdigit() and re.findall(pattern, phone):
+    if len(name.split())>1 and re.findall(pattern, phone):
         msg = Message()
+        msg.subject = "ОЛЦ заказ"
         msg.body = "Имя заказчика: "+name\
                 +"\n"+"E-mail заказчика: "+email\
                 +"\n"+"Номер телефона заказчика: +38"+phone\
@@ -98,7 +98,11 @@ def orendatrans():
 
 @app.route("/aboutus")
 def aboutus():
-    return render_template("aboutus.html", active = "aboutus_active")
+    data = get_data()
+    team = Team.query.all()
+    return render_template("aboutus.html",
+        team = team, active = "aboutus_active", lang = data["lang"],
+        main_team = data["main_team"], url = data["url"], header_class = data["header_class"])
 
 @app.route("/contacts", methods = ["POST", "GET"])
 def contacts():

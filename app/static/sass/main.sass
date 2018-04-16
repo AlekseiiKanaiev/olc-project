@@ -20,6 +20,10 @@ h1
 main 
     text-align: center  
 
+.olc
+    white-space: nowrap
+    text-transform: uppercase
+
 @mixin loader
     background-image: url(../img/loader.gif)
     background-size: 50px
@@ -85,8 +89,7 @@ main
     .h-name
         color: $accent-color
         margin: 10px 0 0 0
-        .olc
-            white-space: nowrap
+        
     
     .sm-h-phone
         color: $light-color
@@ -244,44 +247,44 @@ main
         padding-top: 30px
         &-header
             margin-bottom: 20px
-        &-carousel
-            .owl-nav
-                position: absolute
-                width: 100%
-                top: 0px
-                // font-size: 20px
-                // margin: 20px
-                button
-                    position: absolute
-                    font-size: 26px
-                    width: 50px
-                    height: 50px
-                    &:focus
-                        outline-color: white
-                    &:hover
-                        color: $accent-color
-                        transition: color 0.25s ease
-                .owl-prev
-                    left: 0px
-                .owl-next
-                    right: 0px
-            .team-carousel-item
-                display: flex
-                flex-flow: column
-                text-align: center
-                font-weight: 300
-                margin-bottom: 30px
-                .item-img
-                    display: block
-                    align-self: center
-                    img
-                        width: 80px
-                        height: auto
-                        border-radius: 10em
 
-                svg
-                    font-size: 70px
-                .info
+.team-carousel
+    .owl-nav
+        position: absolute
+        width: 100%
+        top: 0px
+        // font-size: 20px
+        // margin: 20px
+        button
+            position: absolute
+            font-size: 26px
+            width: 50px
+            height: 50px
+            &:focus
+                outline-color: white
+            &:hover
+                color: $accent-color
+                transition: color 0.25s ease
+        .owl-prev
+            left: 0px
+        .owl-next
+            right: 0px
+    .team-carousel-item
+        display: flex
+        flex-flow: column
+        text-align: center
+        font-weight: 300
+        margin-bottom: 30px
+        .item-img
+            display: block
+            align-self: center
+            img
+                width: 80px
+                height: auto
+                border-radius: 10em
+        svg
+            font-size: 70px
+        .info
 
 .oblvideo
     padding-top: 20px
@@ -293,8 +296,7 @@ main
         &-header
             width: 100%
         &-body
-            .olc
-                white-space: nowrap
+            
     &-list
         background-color: #aaaaaa
         &-video
@@ -331,8 +333,6 @@ main
     background-color: #aaaaaa
     &-main
         background-color: #fff
-        .olc
-            white-space: nowrap
         .row
             padding: 
                 left: 15px
@@ -355,7 +355,25 @@ main
         padding: 20px 40px
         &-intro
             width: 100%
+        &-success
+            z-index: 10
+            display: none
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            color: $accent-color
+            text-transform: uppercase
 
+            span
+                margin: auto
+            & ~ *
+                transition: all 0.5s ease
+            &.active
+                & ~ *
+                    opacity: 0.5
+                    filter: blur(10px)
         &-form
             width: 100%
             label
@@ -377,7 +395,38 @@ main
                     background-color: $accent-color
                     border: none 
                     opacity: 1
-                    transition: opacity 0.25s ease        
+                    transition: opacity 0.25s ease      
+
+.aboutus
+    .container
+        padding: 20px
+    &-intro
+        &-header
+            margin: auto
+        &-info
+            width: 100%
+            ul
+                text-align: left
+                width: fit-content
+                margin: auto
+    &-hist
+        &-header
+            margin: auto
+    &-team
+        &-header
+            margin: auto
+            margin-bottom: 20px
+    &-pubinfo
+        &-header
+            margin: auto
+        &-content
+            width: 100%
+            ul
+                text-align: left
+                width: fit-content
+                margin: auto
+        &-close
+            margin: auto
 
 .my-footer
     background-color: #777777
@@ -391,8 +440,7 @@ main
             text-transform: uppercase
             font-weight: bold
             font-size: 20px
-            .olc
-                white-space: nowrap
+            
         &-phone
             font-size: 19px
         svg

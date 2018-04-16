@@ -76,7 +76,18 @@ $(document).ready(function(){
     //setting pagination bar
     $(".page-link:contains('None')").text("...").removeAttr("href")
 
-    // $("#")
+    // $(".contacts-mail-form").submit(function(event){
+    //     event.preventDefault()
+    //     $(this).find(".contacts-mail-success")
+    //     .addClass("active").css("display", "flex").hide().fadeIn();
+    //     setTimeout(function(){
+    //         $(this).find(".contacts-mail-success").removeClass("active").fadeOut();
+    //     }, 3000);
+    // })
+
+    function showInfo(){
+        
+    }
 
     //setting to-top button
     $(window).scroll(function(){
