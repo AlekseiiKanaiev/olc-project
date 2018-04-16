@@ -25,7 +25,7 @@ manager.add_command("db", MigrateCommand)
 
 ### ADMIN ###
 admin = Admin(app)
-from models import Video, Team, Utils
-admin.add_views(ModelView(Video, db.session), ModelView(Team, db.session), ModelView(Utils, db.session))
+from models import Video, Team, Utils, PubInfo
+admin.add_views(ModelView(Video, db.session), ModelView(Team, db.session), ModelView(Utils, db.session), ModelView(PubInfo, db.session))
 
 mail = Mail(app)

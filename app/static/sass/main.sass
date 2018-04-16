@@ -89,24 +89,25 @@ main
     .h-name
         color: $accent-color
         margin: 10px 0 0 0
-        
-    
     .sm-h-phone
         color: $light-color
         font-size: 16px
     .menu
-        
         .dropdown-menu
             margin: auto
             opacity: 0.8
             max-width: 150px
+            background-color: darken(white, 10%)
             .dropdown-item
                 white-space: normal
                 font-size: 14px
                 padding: 0 10px
                 &:hover
+                    background-color: darken(white, 10%)
                     color: $accent-color
                     transition: color .25s ease
+
+
     .navbar-dark
         padding: 0
         button
@@ -416,17 +417,39 @@ main
         &-header
             margin: auto
             margin-bottom: 20px
+    &-button
+        padding-bottom: 20px
     &-pubinfo
+        display: none
         &-header
             margin: auto
         &-content
             width: 100%
+            padding-bottom: 10px
             ul
                 text-align: left
                 width: fit-content
                 margin: auto
+                a
+                    color: $accent-color
+                    opacity: 0.9
+                    &:hover
+                        opacity: 1
+                        transition: opacity 0.25s ease
         &-close
             margin: auto
+            width: 40px
+            height: 40px
+            line-height: 40px
+            background-color: #6c757d
+            z-index: 10
+            border-radius: 4px
+            font-size: 25px
+            cursor: pointer
+            &:hover
+                background-color: #5a6268
+                transition: color 0.25s ease
+                
 
 .my-footer
     background-color: #777777

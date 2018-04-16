@@ -117,7 +117,7 @@
             </div>
         </div>
         <div class="aboutus-button">
-            <button class="btn btn-secondary btn-sm" onclick="showInfo()">
+            <button class="btn btn-secondary btn-sm">
                 {{"Публічна інформація" if lang == "ukr" else "Публичная информация"}}
             </button>
         </div>
@@ -129,21 +129,27 @@
             </div>
             <div class="row">
                 <div class="aboutus-pubinfo-content">
-                    <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
+                    <p>
+                        {{"Bи можете ознайомитися з документами, які регулюють нашу діяльність:"
+                        if lang == "ukr" else 
+                        "Вы можете ознакомиться с документами, которые регламентируют нашу деятельность:"}}
+                    </p>
+                    {% if pubinfo %}
+                    <ul class="list">
+                        {% for item in pubinfo %}
+                        <li>
+                            <a class="popup-link" href="../static/img/pubinfo/{{ item.img_name }}">
+                                {{ item.doc_name_ukr }}
+                            </a>
+                        </li>
+                        {% endfor %}
                     </ul>
+                    {% endif %}
                 </div>
             </div>
             <div class="row">
-                <div class="aboutus-pubinfo-close d-flex justify-content-center">
-                    <button class="btn btn-secondary btn-md" onclick="closeInfo()">
-                        <i class="far fa-times-circle"></i>
-                    </button>
+                <div class="aboutus-pubinfo-close">
+                    <i class="fas fa-times-circle"></i>
                 </div>
             </div>
         </div>

@@ -8647,12 +8647,14 @@ main {
   .my-header .menu .dropdown-menu, .my-simple-header .menu .dropdown-menu {
     margin: auto;
     opacity: 0.8;
-    max-width: 150px; }
+    max-width: 150px;
+    background-color: #e6e6e6; }
     .my-header .menu .dropdown-menu .dropdown-item, .my-simple-header .menu .dropdown-menu .dropdown-item {
       white-space: normal;
       font-size: 14px;
       padding: 0 10px; }
       .my-header .menu .dropdown-menu .dropdown-item:hover, .my-simple-header .menu .dropdown-menu .dropdown-item:hover {
+        background-color: #e6e6e6;
         color: #FF6B50;
         -webkit-transition: color .25s ease;
         -o-transition: color .25s ease;
@@ -8996,20 +8998,46 @@ main {
   margin: auto;
   margin-bottom: 20px; }
 
-.aboutus-pubinfo-header {
-  margin: auto; }
+.aboutus-button {
+  padding-bottom: 20px; }
 
-.aboutus-pubinfo-content {
-  width: 100%; }
-  .aboutus-pubinfo-content ul {
-    text-align: left;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+.aboutus-pubinfo {
+  display: none; }
+  .aboutus-pubinfo-header {
     margin: auto; }
-
-.aboutus-pubinfo-close {
-  margin: auto; }
+  .aboutus-pubinfo-content {
+    width: 100%;
+    padding-bottom: 10px; }
+    .aboutus-pubinfo-content ul {
+      text-align: left;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      margin: auto; }
+      .aboutus-pubinfo-content ul a {
+        color: #FF6B50;
+        opacity: 0.9; }
+        .aboutus-pubinfo-content ul a:hover {
+          opacity: 1;
+          -webkit-transition: opacity 0.25s ease;
+          -o-transition: opacity 0.25s ease;
+          transition: opacity 0.25s ease; }
+  .aboutus-pubinfo-close {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #6c757d;
+    z-index: 10;
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+    font-size: 25px;
+    cursor: pointer; }
+    .aboutus-pubinfo-close:hover {
+      background-color: #5a6268;
+      -webkit-transition: color 0.25s ease;
+      -o-transition: color 0.25s ease;
+      transition: color 0.25s ease; }
 
 .my-footer {
   background-color: #777777;
@@ -9200,6 +9228,8 @@ main {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
+  .aboutus .row {
+    padding: 0px 10px; }
   .my-footer .foot-name {
     font-size: 17px; }
   .to-top {

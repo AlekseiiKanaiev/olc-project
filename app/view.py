@@ -5,7 +5,7 @@ from sqlalchemy import desc
 from flask_mail import Message
 import re
 from config import Configurations
-from models import Video, Team, Utils
+from models import Video, Team, Utils, PubInfo
 
 def get_data(simple = True):
     language = request.args.get("lang")
@@ -18,7 +18,7 @@ def get_data(simple = True):
     main_team = Team.query.filter_by(position_ukr="Директор").first()
     return dict(lang = lang, url = url, header_class = header_class, main_team = main_team)
 
-def send_email():
+def send_email(recipient = None):
     name = request.form.get("inputName")
     email = request.form.get("inputEmail")
     phone = request.form.get("inputPhone")
@@ -34,7 +34,8 @@ def send_email():
                 +"\n"+"Выбранная услуга: "+select\
                 +"\n"+"Дополнительная информация: "+form_msg
         # msg.sender = "oleksii.kanaiev@gmail.com"
-        msg.recipients = ["alexey.kanaev.ua@gmail.com"]
+        msg.recipients = [recipient]
+        # msg.recipients = ["alexey.kanaev.ua@gmail.com" if not recipient else recipient]
         mail.send(msg)
         return True
     return False
@@ -100,18 +101,18 @@ def orendatrans():
 def aboutus():
     data = get_data()
     team = Team.query.all()
+    pubinfo = PubInfo.query.all()
     return render_template("aboutus.html",
-        team = team, active = "aboutus_active", lang = data["lang"],
+        team = team, pubinfo = pubinfo, active = "aboutus_active", lang = data["lang"],
         main_team = data["main_team"], url = data["url"], header_class = data["header_class"])
 
 @app.route("/contacts", methods = ["POST", "GET"])
 def contacts():
     data = get_data()
     error = None
-    
     if request.method == "POST":
         error = "Не вірно заповнена форма" if data["lang"] == "ukr" else "Не правильно заполнена форма"
-        if send_email():
+        if send_email(data["main_team"].email):
             error = None
             flash("Повідомлення відправленно" if data["lang"] == "ukr" else "Cooбщение отправленно") 
     utils = Utils.query.all()

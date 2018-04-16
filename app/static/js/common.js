@@ -85,9 +85,19 @@ $(document).ready(function(){
     //     }, 3000);
     // })
 
-    function showInfo(){
-        
-    }
+    $(".aboutus-button").click(function(){
+        $(".aboutus-pubinfo").css("display", "block").hide().fadeIn("slow")
+        $(this).hide("slow")
+    })
+    $(".aboutus-pubinfo-close").click(function(){
+        $(".aboutus-pubinfo").hide("slow")
+        $(".aboutus-button").fadeIn("slow")
+    })
+
+    $('.popup-link').magnificPopup({
+        type: 'image'
+        // other options
+      });
 
     //setting to-top button
     $(window).scroll(function(){
