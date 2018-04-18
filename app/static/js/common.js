@@ -50,6 +50,7 @@ $(document).ready(function(){
     $("#my-carousel").carousel({
         interval: 5000
     });
+    
     //init and seting team carousel
     $("#team-carousel").owlCarousel({
         loop:true,

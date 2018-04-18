@@ -31,6 +31,7 @@ gulp.task("scripts", function(){
         "./app/static/libs/background-video/jquery.backgroundvideo.min.js",
         "./app/static/libs/device.js/lib/device.min.js",
         "./app/static/libs/owl.carousel/dist/owl.carousel.min.js",
+        "./app/static/libs/fotorama/fotorama.js",
         "./app/static/fonts/fontawesome/fontawesome-all.js"
     ])
     .pipe(concat("libs.min.js"))

@@ -45,15 +45,6 @@ class AdminView(AdminMixin, ModelView):
 class HomeAdminView(AdminMixin, AdminIndexView):
     pass
 
-# class RedactorView(ModelView):
-#     def is_accessible(self):
-#         return  current_user.has_role('redactor') or\
-                
-#                 current_user.has_role("main")
-
-#     def inaccessible_callback(self, name, **kwargs):
-#         return redirect(url_for("security.login", next = request.url))
-
 class MainView(ModelView):
     def is_accessible(self):
         return  current_user.has_role("admin") or\
