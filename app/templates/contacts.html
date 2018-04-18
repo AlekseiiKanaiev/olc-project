@@ -25,18 +25,18 @@
             <div class="row">
                 <div class="contacts-main-person d-flex justify-content-center">
                     <figure class="contacts-main-person-img">
-                    {% if main_team.img_name %}
-                        <img class="main-person-img" src="../static/img/team/{{main_team.img_name}}"
+                    {% if main_user.img_name %}
+                        <img class="main-person-img" src="../static/img/team/{{main_user.img_name}}"
                         alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'">
                     {% else %}
                         <i class="far fa-user"></i>
                     {% endif %}
                     </figure>
                     <div class="contacts-main-person-info">
-                        {{ main_team.position_ukr if lang == "ukr" else main_team.position_rus }} <br>
-                        {{ main_team.full_name_ukr if lang == "ukr" else main_team.full_name_rus }} <br>
+                        {{ main_user.position_ukr if lang == "ukr" else main_user.position_rus }} <br>
+                        {{ main_user.full_name_ukr if lang == "ukr" else main_user.full_name_rus }} <br>
                         <i class="fas fa-mobile-alt"></i>
-                        {{ main_team.phone }}
+                        {{ main_user.phone }}
                     </div>
                 </div>
             </div>

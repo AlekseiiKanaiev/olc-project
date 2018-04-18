@@ -77,11 +77,41 @@ main
         @include opacity(100)
         transform: scale(1)
 
-.my-header, .my-simple-header
+.login
+    padding: 20px
+    margin: auto
+    form
+        input, select, textarea, .btn
+            &:focus
+                border-color: $accent-color
+                box-shadow: 0 0 0 0.2rem rgba($accent-color, 0.7)
+        .btn
+            background-color: $accent-color
+            opacity: 0.8
+            border: none   
+            &:hover
+                background-color: $accent-color
+                border: none 
+                opacity: 1
+                transition: opacity 0.25s ease  
+
+
+.my-header, .my-simple-header, .my-login-header
     text-align: center
     width: 100%
     .container-fluid
         background-color: rgba(#444444,0.8)
+        .admin-link, .home-link
+            width: 100%
+            // text-align: left
+            margin: auto
+            a
+                color: white
+                &:hover
+                    color: $accent-color
+                    transition: color 0.25s ease
+        .login-center
+            margin: auto
     .logo
         bottom: 20px
         width: 65px
@@ -287,8 +317,9 @@ main
             font-size: 70px
         .info
 
-.oblvideo
-    padding-top: 20px
+.oblvideo, .privatvideo, .orendamest
+    .container, .container-fluid
+        padding: 20px
     .intro
         .row
             padding: 
@@ -297,7 +328,27 @@ main
         &-header
             width: 100%
         &-body
-            
+            width: 100%
+        ul
+            text-align: left
+            margin: auto
+            width: fit-content
+            padding-bottom: 10px
+        &-button
+            margin: auto
+            .btn
+                width: auto
+                height: auto
+                font-size: 20px
+                background-color: $accent-color
+                opacity: 0.9
+                border: none
+                border-radius: 10px
+                &:hover
+                    opacity: 1
+                    transition: opacity .25s ease
+    .adr
+        white-space: nowrap
     &-list
         background-color: #aaaaaa
         &-video
@@ -330,6 +381,7 @@ main
                     background-color: $accent-color
                     border-color: $accent-color
                 
+
 .contacts
     background-color: #aaaaaa
     &-main

@@ -19,7 +19,14 @@
         <div class="section {{header_class}}">
             <div class="container-fluid my-header-top">
                 <div class="row"> 
-                    <div class="col-12 col-md-2 left d-lg-flex justify-content-end align-items-start">
+                    <div class="col-sm-12 col-md-2 left d-lg-flex justify-content-end align-items-start">
+                        {% if current_user.has_role("admin") or
+                              current_user.has_role("redactor") or
+                              current_user.has_role("main") %}
+                        <div class="admin-link">
+                            <a href="/admin">Admin</a>
+                        </div>
+                        {% endif %}
                         <img class="logo" src="../static/img/logo.svg" alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'" height="150px">
                     </div>
                     <div class="col-12 col-md-8">
@@ -31,7 +38,7 @@
                         <h6>
                             <div class="sm-h-phone d-md-none d-sm-block">
                                 <i class="fas fa-mobile-alt"></i>
-                                {{ main_team.phone }}
+                                {{ main_user.phone }}
                             </div>
                         </h6>
                         <div class="menu d-flex justify-content-center">
@@ -97,7 +104,7 @@
                     <div class="col-md-2 right">
                         <div class="h-phone d-none d-md-block">
                             <i class="fas fa-mobile-alt"></i>
-                            {{ main_team.phone }}
+                            {{ main_user.phone }}
                         </div>
                         <nav class="nav justify-content-center lang">
                             <li class="nav-item">
@@ -136,7 +143,7 @@
                             </div>
                             <div class="foot foot-phone">
                                 <i class="fas fa-mobile-alt"></i>
-                                {{ main_team.phone }}
+                                {{ main_user.phone }}
                             </div>
                         </div>
                     </div>

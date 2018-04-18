@@ -8629,86 +8629,117 @@ main {
     -webkit-transform: scale(1);
             transform: scale(1); } }
 
-.my-header, .my-simple-header {
+.login {
+  padding: 20px;
+  margin: auto; }
+  .login form input:focus, .login form select:focus, .login form textarea:focus, .login form .btn:focus {
+    border-color: #FF6B50;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 107, 80, 0.7);
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 80, 0.7); }
+  .login form .btn {
+    background-color: #FF6B50;
+    opacity: 0.8;
+    border: none; }
+    .login form .btn:hover {
+      background-color: #FF6B50;
+      border: none;
+      opacity: 1;
+      -webkit-transition: opacity 0.25s ease;
+      -o-transition: opacity 0.25s ease;
+      transition: opacity 0.25s ease; }
+
+.my-header, .my-simple-header, .my-login-header {
   text-align: center;
   width: 100%; }
-  .my-header .container-fluid, .my-simple-header .container-fluid {
+  .my-header .container-fluid, .my-simple-header .container-fluid, .my-login-header .container-fluid {
     background-color: rgba(68, 68, 68, 0.8); }
-  .my-header .logo, .my-simple-header .logo {
+    .my-header .container-fluid .admin-link, .my-header .container-fluid .home-link, .my-simple-header .container-fluid .admin-link, .my-simple-header .container-fluid .home-link, .my-login-header .container-fluid .admin-link, .my-login-header .container-fluid .home-link {
+      width: 100%;
+      margin: auto; }
+      .my-header .container-fluid .admin-link a, .my-header .container-fluid .home-link a, .my-simple-header .container-fluid .admin-link a, .my-simple-header .container-fluid .home-link a, .my-login-header .container-fluid .admin-link a, .my-login-header .container-fluid .home-link a {
+        color: white; }
+        .my-header .container-fluid .admin-link a:hover, .my-header .container-fluid .home-link a:hover, .my-simple-header .container-fluid .admin-link a:hover, .my-simple-header .container-fluid .home-link a:hover, .my-login-header .container-fluid .admin-link a:hover, .my-login-header .container-fluid .home-link a:hover {
+          color: #FF6B50;
+          -webkit-transition: color 0.25s ease;
+          -o-transition: color 0.25s ease;
+          transition: color 0.25s ease; }
+    .my-header .container-fluid .login-center, .my-simple-header .container-fluid .login-center, .my-login-header .container-fluid .login-center {
+      margin: auto; }
+  .my-header .logo, .my-simple-header .logo, .my-login-header .logo {
     bottom: 20px;
     width: 65px;
     height: auto; }
-  .my-header .h-name, .my-simple-header .h-name {
+  .my-header .h-name, .my-simple-header .h-name, .my-login-header .h-name {
     color: #FF6B50;
     margin: 10px 0 0 0; }
-  .my-header .sm-h-phone, .my-simple-header .sm-h-phone {
+  .my-header .sm-h-phone, .my-simple-header .sm-h-phone, .my-login-header .sm-h-phone {
     color: rgba(255, 255, 255, 0.8);
     font-size: 16px; }
-  .my-header .menu .dropdown-menu, .my-simple-header .menu .dropdown-menu {
+  .my-header .menu .dropdown-menu, .my-simple-header .menu .dropdown-menu, .my-login-header .menu .dropdown-menu {
     margin: auto;
     opacity: 0.8;
     max-width: 150px;
     background-color: #e6e6e6; }
-    .my-header .menu .dropdown-menu .dropdown-item, .my-simple-header .menu .dropdown-menu .dropdown-item {
+    .my-header .menu .dropdown-menu .dropdown-item, .my-simple-header .menu .dropdown-menu .dropdown-item, .my-login-header .menu .dropdown-menu .dropdown-item {
       white-space: normal;
       font-size: 14px;
       padding: 0 10px; }
-      .my-header .menu .dropdown-menu .dropdown-item:hover, .my-simple-header .menu .dropdown-menu .dropdown-item:hover {
+      .my-header .menu .dropdown-menu .dropdown-item:hover, .my-simple-header .menu .dropdown-menu .dropdown-item:hover, .my-login-header .menu .dropdown-menu .dropdown-item:hover {
         background-color: #e6e6e6;
         color: #FF6B50;
         -webkit-transition: color .25s ease;
         -o-transition: color .25s ease;
         transition: color .25s ease; }
-  .my-header .navbar-dark, .my-simple-header .navbar-dark {
+  .my-header .navbar-dark, .my-simple-header .navbar-dark, .my-login-header .navbar-dark {
     padding: 0; }
-    .my-header .navbar-dark button, .my-simple-header .navbar-dark button {
+    .my-header .navbar-dark button, .my-simple-header .navbar-dark button, .my-login-header .navbar-dark button {
       -webkit-column-rule-color: #FF6B50;
          -moz-column-rule-color: #FF6B50;
               column-rule-color: #FF6B50; }
-    .my-header .navbar-dark .navbar-toggler, .my-simple-header .navbar-dark .navbar-toggler {
+    .my-header .navbar-dark .navbar-toggler, .my-simple-header .navbar-dark .navbar-toggler, .my-login-header .navbar-dark .navbar-toggler {
       -webkit-box-align: end;
       -webkit-align-items: flex-end;
           -ms-flex-align: end;
               align-items: flex-end;
       border-color: #FF6B50; }
-    .my-header .navbar-dark .collapsed, .my-simple-header .navbar-dark .collapsed {
+    .my-header .navbar-dark .collapsed, .my-simple-header .navbar-dark .collapsed, .my-login-header .navbar-dark .collapsed {
       border-color: rgba(255, 255, 255, 0.5); }
-    .my-header .navbar-dark .navbar-nav .nav-link, .my-simple-header .navbar-dark .navbar-nav .nav-link {
+    .my-header .navbar-dark .navbar-nav .nav-link, .my-simple-header .navbar-dark .navbar-nav .nav-link, .my-login-header .navbar-dark .navbar-nav .nav-link {
       cursor: pointer;
       color: #fff; }
-      .my-header .navbar-dark .navbar-nav .nav-link:hover, .my-simple-header .navbar-dark .navbar-nav .nav-link:hover {
+      .my-header .navbar-dark .navbar-nav .nav-link:hover, .my-simple-header .navbar-dark .navbar-nav .nav-link:hover, .my-login-header .navbar-dark .navbar-nav .nav-link:hover {
         color: #FF6B50;
         -webkit-transition: color .5s ease;
         -o-transition: color .5s ease;
         transition: color .5s ease; }
-    .my-header .navbar-dark .navbar-nav .active, .my-simple-header .navbar-dark .navbar-nav .active {
+    .my-header .navbar-dark .navbar-nav .active, .my-simple-header .navbar-dark .navbar-nav .active, .my-login-header .navbar-dark .navbar-nav .active {
       color: #FF6B50; }
-  .my-header .h-phone, .my-simple-header .h-phone {
+  .my-header .h-phone, .my-simple-header .h-phone, .my-login-header .h-phone {
     margin: 10px 0;
     font-size: 20px;
     color: rgba(255, 255, 255, 0.8);
     white-space: nowrap; }
-    .my-header .h-phone .fa-mobile-alt, .my-simple-header .h-phone .fa-mobile-alt {
+    .my-header .h-phone .fa-mobile-alt, .my-simple-header .h-phone .fa-mobile-alt, .my-login-header .h-phone .fa-mobile-alt {
       margin-right: 8px;
       font-size: 16px; }
-  .my-header .lang, .my-simple-header .lang {
+  .my-header .lang, .my-simple-header .lang, .my-login-header .lang {
     font-size: 13px; }
-    .my-header .lang .nav-link, .my-simple-header .lang .nav-link {
+    .my-header .lang .nav-link, .my-simple-header .lang .nav-link, .my-login-header .lang .nav-link {
       color: #fff; }
-      .my-header .lang .nav-link:hover, .my-simple-header .lang .nav-link:hover {
+      .my-header .lang .nav-link:hover, .my-simple-header .lang .nav-link:hover, .my-login-header .lang .nav-link:hover {
         color: #FF6B50;
         -webkit-transition: color .5s ease;
         -o-transition: color .5s ease;
         transition: color .5s ease; }
-    .my-header .lang .active, .my-simple-header .lang .active {
+    .my-header .lang .active, .my-simple-header .lang .active, .my-login-header .lang .active {
       color: #FF6B50; }
-  .my-header .description, .my-simple-header .description {
+  .my-header .description, .my-simple-header .description, .my-login-header .description {
     color: white;
     height: 100%;
     max-height: 600px;
     width: 100%;
     margin-top: 100px; }
-    .my-header .description h1, .my-simple-header .description h1 {
+    .my-header .description h1, .my-simple-header .description h1, .my-login-header .description h1 {
       font-size: 36px;
       letter-spacing: 4px;
       text-shadow: 0 0 0.2rem rgba(255, 107, 80, 0.7); }
@@ -8865,46 +8896,80 @@ main {
   .team-carousel .team-carousel-item svg {
     font-size: 70px; }
 
-.oblvideo {
-  padding-top: 20px; }
-  .oblvideo .intro .row {
-    padding-left: 15px;
-    padding-right: 15px; }
-  .oblvideo .intro-header {
-    width: 100%; }
-  .oblvideo-list {
-    background-color: #aaaaaa; }
-    .oblvideo-list-video {
-      margin-top: 20px; }
-      .oblvideo-list-video iframe {
-        background-image: url(../img/loader.gif);
-        -webkit-background-size: 50px 50px;
-                background-size: 50px;
-        background-repeat: no-repeat;
-        background-position: center; }
-    .oblvideo-list .title {
-      font-weight: 300;
-      letter-spacing: 3px;
-      padding-right: 10px;
-      padding-left: 10px; }
-    .oblvideo-list ul {
-      margin-bottom: 0px;
-      padding-bottom: 20px;
-      padding-top: 20px; }
-      .oblvideo-list ul .page-item .page-link {
-        color: #000; }
-        .oblvideo-list ul .page-item .page-link:hover {
-          background-color: #FF6B50;
-          border-color: #FF6B50;
-          opacity: 0.7;
-          -webkit-transition: color 0.25s ease;
-          -o-transition: color 0.25s ease;
-          transition: color 0.25s ease; }
-      .oblvideo-list ul .disabled {
-        opacity: 0.7; }
-      .oblvideo-list ul .active .page-link {
+.oblvideo .container, .oblvideo .container-fluid, .privatvideo .container, .privatvideo .container-fluid, .orendamest .container, .orendamest .container-fluid {
+  padding: 20px; }
+
+.oblvideo .intro .row, .privatvideo .intro .row, .orendamest .intro .row {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.oblvideo .intro-header, .privatvideo .intro-header, .orendamest .intro-header {
+  width: 100%; }
+
+.oblvideo .intro-body, .privatvideo .intro-body, .orendamest .intro-body {
+  width: 100%; }
+
+.oblvideo .intro ul, .privatvideo .intro ul, .orendamest .intro ul {
+  text-align: left;
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-bottom: 10px; }
+
+.oblvideo .intro-button, .privatvideo .intro-button, .orendamest .intro-button {
+  margin: auto; }
+  .oblvideo .intro-button .btn, .privatvideo .intro-button .btn, .orendamest .intro-button .btn {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    background-color: #FF6B50;
+    opacity: 0.9;
+    border: none;
+    -webkit-border-radius: 10px;
+            border-radius: 10px; }
+    .oblvideo .intro-button .btn:hover, .privatvideo .intro-button .btn:hover, .orendamest .intro-button .btn:hover {
+      opacity: 1;
+      -webkit-transition: opacity .25s ease;
+      -o-transition: opacity .25s ease;
+      transition: opacity .25s ease; }
+
+.oblvideo .adr, .privatvideo .adr, .orendamest .adr {
+  white-space: nowrap; }
+
+.oblvideo-list, .privatvideo-list, .orendamest-list {
+  background-color: #aaaaaa; }
+  .oblvideo-list-video, .privatvideo-list-video, .orendamest-list-video {
+    margin-top: 20px; }
+    .oblvideo-list-video iframe, .privatvideo-list-video iframe, .orendamest-list-video iframe {
+      background-image: url(../img/loader.gif);
+      -webkit-background-size: 50px 50px;
+              background-size: 50px;
+      background-repeat: no-repeat;
+      background-position: center; }
+  .oblvideo-list .title, .privatvideo-list .title, .orendamest-list .title {
+    font-weight: 300;
+    letter-spacing: 3px;
+    padding-right: 10px;
+    padding-left: 10px; }
+  .oblvideo-list ul, .privatvideo-list ul, .orendamest-list ul {
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    padding-top: 20px; }
+    .oblvideo-list ul .page-item .page-link, .privatvideo-list ul .page-item .page-link, .orendamest-list ul .page-item .page-link {
+      color: #000; }
+      .oblvideo-list ul .page-item .page-link:hover, .privatvideo-list ul .page-item .page-link:hover, .orendamest-list ul .page-item .page-link:hover {
         background-color: #FF6B50;
-        border-color: #FF6B50; }
+        border-color: #FF6B50;
+        opacity: 0.7;
+        -webkit-transition: color 0.25s ease;
+        -o-transition: color 0.25s ease;
+        transition: color 0.25s ease; }
+    .oblvideo-list ul .disabled, .privatvideo-list ul .disabled, .orendamest-list ul .disabled {
+      opacity: 0.7; }
+    .oblvideo-list ul .active .page-link, .privatvideo-list ul .active .page-link, .orendamest-list ul .active .page-link {
+      background-color: #FF6B50;
+      border-color: #FF6B50; }
 
 .contacts {
   background-color: #aaaaaa; }
