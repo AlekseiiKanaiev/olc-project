@@ -70,11 +70,11 @@ def video_gallery(video_type):
     pages = video.paginate(page = page, per_page = 3)
     if video_type == "oblvideo":
         return render_template("oblvideo.html", 
-            video = video, pages = pages, active = "gallery_active", lang = data["lang"],
+            pages = pages, active = "gallery_active", lang = data["lang"],
             main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
     elif video_type == "privatvideo":
         return render_template("privatvideo.html", 
-            video = video, pages = pages, active = "gallery_active", lang = data["lang"],
+            pages = pages, active = "gallery_active", lang = data["lang"],
             main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
 
 # @app.route("/gallery/oblvideo")
