@@ -26,7 +26,7 @@ def send_email(recipient = None):
     select = request.form.get("inputSelect")
     form_msg = request.form.get("inputMsg")
     pattern = r"\d{10}"
-    if len(name.split())>1 and re.findall(pattern, phone):
+    if re.findall(pattern, phone):
         msg = Message()
         msg.subject = "ОЛЦ заказ"
         msg.body = "Имя заказчика: "+name\
@@ -56,7 +56,7 @@ def main():
 
 @app.route("/gallery")
 def gallery():
-    return redirect(url_for('video_gallery'))
+    return redirect(url_for('video_gallery', video_type = "privatvideo")) 
 
 @app.route("/gallery/<video_type>")
 def video_gallery(video_type):
@@ -68,42 +68,9 @@ def video_gallery(video_type):
         page = 1
     video = Video.query.filter(Video.title.contains(video_type)).order_by(Video.id.desc())
     pages = video.paginate(page = page, per_page = 3)
-    if video_type == "oblvideo":
-        return render_template("oblvideo.html", 
+    return render_template(video_type+".html", 
             pages = pages, active = "gallery_active", lang = data["lang"],
             main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
-    elif video_type == "privatvideo":
-        return render_template("privatvideo.html", 
-            pages = pages, active = "gallery_active", lang = data["lang"],
-            main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
-
-# @app.route("/gallery/oblvideo")
-# def oblvideo():
-#     data = get_data()
-#     page = request.args.get("page")
-#     if page and page.isdigit():
-#         page = int(page)
-#     else:
-#         page = 1
-#     video = Video.query.filter(Video.title.contains("oblvideo")).order_by(Video.id.desc())
-#     pages = video.paginate(page = page, per_page = 3)
-#     return render_template("oblvideo.html", 
-#         video = video, pages = pages, active = "gallery_active", lang = data["lang"],
-#         main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
-
-# @app.route("/gallery/privatvideo")
-# def privatvideo():
-#     data = get_data()
-#     page = request.args.get("page")
-#     if page and page.isdigit():
-#         page = int(page)
-#     else:
-#         page = 1
-#     video = Video.query.filter(Video.title.contains("privatvideo")).order_by(Video.id.desc())
-#     pages = video.paginate(page = page, per_page = 3)
-    # return render_template("privatvideo.html", 
-    #     video = video, pages = pages, active = "gallery_active", lang = data["lang"],
-    #     main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
 
 @app.route("/orenda")
 @login_required
@@ -136,7 +103,7 @@ def contacts():
     data = get_data()
     error = None
     if request.method == "POST":
-        error = "Не вірно заповнена форма" if data["lang"] == "ukr" else "Не правильно заполнена форма"
+        error = "Неправильно заповнена форма" if data["lang"] == "ukr" else "Неправильно заполнена форма"
         if send_email(data["main_user"].email):
             error = None
             flash("Повідомлення відправленно" if data["lang"] == "ukr" else "Cooбщение отправленно") 
