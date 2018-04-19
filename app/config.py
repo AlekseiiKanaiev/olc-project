@@ -12,7 +12,7 @@ class Configurations(object):
     #                                     database = "test1",
     #                                     user = "root",
     #                                     password = "1")
-    SQLALCHEMY_DATABASE_URI = 'sqlite:////home/family/VisualCodeProjects/New/test-project/app/test.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:////home/family/VisualCodeProjects/New/olc-project/app/test.db'
     # SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://root:1@localhost/test"
     # SQLALCHEMY_DATABASE_URI = "mysql://localhost/test1"
     
