@@ -54,37 +54,57 @@ def main():
         video = video, team = team, active = "index_active", lang = data["lang"],  
         main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
 
-@app.route("/galery")
-def galery():
-    return redirect(url_for('privatvideo'))
+@app.route("/gallery")
+def gallery():
+    return redirect(url_for('video_gallery'))
 
-@app.route("/galery/oblvideo")
-def oblvideo():
+@app.route("/gallery/<video_type>")
+def video_gallery(video_type):
     data = get_data()
+    print(data)
     page = request.args.get("page")
     if page and page.isdigit():
         page = int(page)
     else:
         page = 1
-    video = Video.query.filter(Video.title.contains("oblvideo")).order_by(Video.id.desc())
+    video = Video.query.filter(Video.title.contains(video_type)).order_by(Video.id.desc())
     pages = video.paginate(page = page, per_page = 3)
-    return render_template("oblvideo.html", 
-        video = video, pages = pages, active = "galery_active", lang = data["lang"],
-        main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
+    if video_type == "oblvideo":
+        return render_template("oblvideo.html", 
+            video = video, pages = pages, active = "gallery_active", lang = data["lang"],
+            main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
+    elif video_type == "privatvideo":
+        return render_template("privatvideo.html", 
+            video = video, pages = pages, active = "gallery_active", lang = data["lang"],
+            main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
 
-@app.route("/galery/privatvideo")
-def privatvideo():
-    data = get_data()
-    page = request.args.get("page")
-    if page and page.isdigit():
-        page = int(page)
-    else:
-        page = 1
-    video = Video.query.filter(Video.title.contains("privatvideo")).order_by(Video.id.desc())
-    pages = video.paginate(page = page, per_page = 3)
-    return render_template("privatvideo.html", 
-        video = video, pages = pages, active = "galery_active", lang = data["lang"],
-        main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
+# @app.route("/gallery/oblvideo")
+# def oblvideo():
+#     data = get_data()
+#     page = request.args.get("page")
+#     if page and page.isdigit():
+#         page = int(page)
+#     else:
+#         page = 1
+#     video = Video.query.filter(Video.title.contains("oblvideo")).order_by(Video.id.desc())
+#     pages = video.paginate(page = page, per_page = 3)
+#     return render_template("oblvideo.html", 
+#         video = video, pages = pages, active = "gallery_active", lang = data["lang"],
+#         main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
+
+# @app.route("/gallery/privatvideo")
+# def privatvideo():
+#     data = get_data()
+#     page = request.args.get("page")
+#     if page and page.isdigit():
+#         page = int(page)
+#     else:
+#         page = 1
+#     video = Video.query.filter(Video.title.contains("privatvideo")).order_by(Video.id.desc())
+#     pages = video.paginate(page = page, per_page = 3)
+    # return render_template("privatvideo.html", 
+    #     video = video, pages = pages, active = "gallery_active", lang = data["lang"],
+    #     main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
 
 @app.route("/orenda")
 @login_required
