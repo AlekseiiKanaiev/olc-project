@@ -8,11 +8,11 @@
         <div class="container intro">
             <div class="row">
                 <div class="intro-header">
-                    <h1>
+                    <h2>
                         {{"Відео для для приватних клієнтів" 
                         if lang == "ukr" else
                         "Видео для частных клиентов"}}
-                    </h1>
+                    </h2>
                 </div>
                 <div class="intro-body">
                     {% if lang == "ukr" %}
@@ -49,14 +49,14 @@
                 </div>
             </div>
         </div>
-        {% if video and pages.items %}
+        {% if pages.items %}
         <div class="container-fluid privatvideo-list">
             <div class="privatvideo-list-header">
-                <h1>
+                <h2>
                     {{"Приклади наших робіт, щоб переконатися в їхній якості!" 
                     if lang == "ukr" else
                     "Примеры наших работ для демонстрации их качества"}}
-                </h1>
+                </h2>
             </div>
             {% for item in pages.items %}
             <div class="row d-flex justify-content-center">

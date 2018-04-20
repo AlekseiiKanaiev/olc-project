@@ -29,30 +29,57 @@ class Video(db.Model):
     def __repr__(self):
         return "Video id: {}, title: {}".format(self.id, self.title)
 
-class Utils(db.Model):
-
+class Services(db.Model):
+    
     id = db.Column(db.Integer, primary_key = True)
-    util_name_ukr = db.Column(db.String(140), unique = True)
-    util_name_rus = db.Column(db.String(140), unique = True)
-
-    def __init__(self, *args, **kwargs):
-        super(Utils, self).__init__(*args, **kwargs)
-
-    def __repr__(self):
-        return "Util_name: {}".format(self.util_name)
-
-class PubInfo(db.Model):
-
-    id = db.Column(db.Integer, primary_key = True)
-    doc_name_ukr = db.Column(db.String(140), unique = True)
-    doc_name_rus = db.Column(db.String(140), unique = True)
+    name_ukr = db.Column(db.String(140), unique = True)
+    name_rus = db.Column(db.String(140), unique = True)
     img_name = db.Column(db.String(140))
+    servtype_id = db.Column(db.Integer, db.ForeignKey("servtypes.id"))
+    servtypes = db.relationship("ServTypes", backref = db.backref("services", lazy = "dynamic"))
 
     def __init__(self, *args, **kwargs):
-        super(PubInfo, self).__init__(*args, **kwargs)
+        super(Services, self).__init__(*args, **kwargs)
 
     def __repr__(self):
-        return "PubInfo: {}".format(self.util_name)
+        return "Name: {}".format(self.name_ukr)
+
+class ServTypes(db.Model):
+    __tablename__ = 'servtypes'
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(140), unique = True)
+
+    def __init__(self, *args, **kwargs):
+        super(ServTypes, self).__init__(*args, **kwargs)
+
+    def __repr__(self):
+        return "Name: {}".format(self.name)
+
+
+# class Utils(db.Model):
+
+#     id = db.Column(db.Integer, primary_key = True)
+#     util_name_ukr = db.Column(db.String(140), unique = True)
+#     util_name_rus = db.Column(db.String(140), unique = True)
+
+#     def __init__(self, *args, **kwargs):
+#         super(Utils, self).__init__(*args, **kwargs)
+
+#     def __repr__(self):
+#         return "Util_name: {}".format(self.util_name)
+
+# class PubInfo(db.Model):
+
+#     id = db.Column(db.Integer, primary_key = True)
+#     doc_name_ukr = db.Column(db.String(140), unique = True)
+#     doc_name_rus = db.Column(db.String(140), unique = True)
+#     img_name = db.Column(db.String(140))
+
+#     def __init__(self, *args, **kwargs):
+#         super(PubInfo, self).__init__(*args, **kwargs)
+
+#     def __repr__(self):
+#         return "PubInfo: {}".format(self.util_name)
 
 ### Flask-Security ###
 

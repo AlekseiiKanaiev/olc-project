@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
     
     <!-- <style>body{opacity: 0; overflow-x: hidden;}html{background-color: #fff;}</style> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
@@ -109,11 +111,11 @@
                         <nav class="nav justify-content-center lang">
                             <li class="nav-item">
                                 <a class="nav-link {{ lang=='ukr' and 'active' }}" id = 'ukr' 
-                                    href="{{url}}?lang=ukr">укр</a>
+                                    href="{{request.path}}?lang=ukr">укр</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ lang=='rus' and 'active' }}" id = 'rus' 
-                                    href = "{{url}}?lang=rus">рус</a>
+                                    href = "{{request.path}}?lang=rus">рус</a>
                             </li>
                         </nav>
                     </div>
