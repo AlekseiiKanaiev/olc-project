@@ -9135,7 +9135,7 @@ body {
   overflow-x: hidden;
   opacity: 1; }
 
-h1 {
+h1, h2 {
   font-size: 28px;
   font-weight: bold;
   text-transform: uppercase; }
@@ -9489,20 +9489,20 @@ main {
   .team-carousel .team-carousel-item svg {
     font-size: 70px; }
 
-.oblvideo .container, .oblvideo .container-fluid, .privatvideo .container, .privatvideo .container-fluid, .orendamest .container, .orendamest .container-fluid {
+.oblvideo .container, .oblvideo .container-fluid, .privatvideo .container, .privatvideo .container-fluid, .orendamest .container, .orendamest .container-fluid, .orendatrans .container, .orendatrans .container-fluid {
   padding: 20px; }
 
-.oblvideo .intro .row, .privatvideo .intro .row, .orendamest .intro .row {
+.oblvideo .intro .row, .privatvideo .intro .row, .orendamest .intro .row, .orendatrans .intro .row {
   padding-left: 15px;
   padding-right: 15px; }
 
-.oblvideo .intro-header, .privatvideo .intro-header, .orendamest .intro-header {
+.oblvideo .intro-header, .privatvideo .intro-header, .orendamest .intro-header, .orendatrans .intro-header {
   width: 100%; }
 
-.oblvideo .intro-body, .privatvideo .intro-body, .orendamest .intro-body {
+.oblvideo .intro-body, .privatvideo .intro-body, .orendamest .intro-body, .orendatrans .intro-body {
   width: 100%; }
 
-.oblvideo .intro ul, .privatvideo .intro ul, .orendamest .intro ul {
+.oblvideo .intro ul, .privatvideo .intro ul, .orendamest .intro ul, .orendatrans .intro ul {
   text-align: left;
   margin: auto;
   width: -webkit-fit-content;
@@ -9510,9 +9510,9 @@ main {
   width: fit-content;
   padding-bottom: 10px; }
 
-.oblvideo .intro-button, .privatvideo .intro-button, .orendamest .intro-button {
+.oblvideo .intro-button, .privatvideo .intro-button, .orendamest .intro-button, .orendatrans .intro-button {
   margin: auto; }
-  .oblvideo .intro-button .btn, .privatvideo .intro-button .btn, .orendamest .intro-button .btn {
+  .oblvideo .intro-button .btn, .privatvideo .intro-button .btn, .orendamest .intro-button .btn, .orendatrans .intro-button .btn {
     width: auto;
     height: auto;
     font-size: 20px;
@@ -9521,51 +9521,58 @@ main {
     border: none;
     -webkit-border-radius: 10px;
             border-radius: 10px; }
-    .oblvideo .intro-button .btn:hover, .privatvideo .intro-button .btn:hover, .orendamest .intro-button .btn:hover {
+    .oblvideo .intro-button .btn:hover, .privatvideo .intro-button .btn:hover, .orendamest .intro-button .btn:hover, .orendatrans .intro-button .btn:hover {
       opacity: 1;
       -webkit-transition: opacity .25s ease;
       -o-transition: opacity .25s ease;
       transition: opacity .25s ease; }
 
-.oblvideo .adr, .privatvideo .adr, .orendamest .adr {
+.oblvideo .adr, .privatvideo .adr, .orendamest .adr, .orendatrans .adr {
   white-space: nowrap; }
 
-.oblvideo-list, .privatvideo-list, .orendamest-list {
+.oblvideo-list, .privatvideo-list, .orendamest-list, .orendatrans-list {
   background-color: #aaaaaa; }
-  .oblvideo-list-video, .privatvideo-list-video, .orendamest-list-video {
+  .oblvideo-list-video, .privatvideo-list-video, .orendamest-list-video, .orendatrans-list-video {
     margin-top: 20px; }
-    .oblvideo-list-video iframe, .privatvideo-list-video iframe, .orendamest-list-video iframe {
+    .oblvideo-list-video iframe, .privatvideo-list-video iframe, .orendamest-list-video iframe, .orendatrans-list-video iframe {
       background-image: url(../img/loader.gif);
       -webkit-background-size: 50px 50px;
               background-size: 50px;
       background-repeat: no-repeat;
       background-position: center; }
-  .oblvideo-list .title, .privatvideo-list .title, .orendamest-list .title {
+  .oblvideo-list .title, .privatvideo-list .title, .orendamest-list .title, .orendatrans-list .title {
     font-weight: 300;
     letter-spacing: 3px;
     padding-right: 10px;
     padding-left: 10px; }
-  .oblvideo-list ul, .privatvideo-list ul, .orendamest-list ul {
+  .oblvideo-list ul, .privatvideo-list ul, .orendamest-list ul, .orendatrans-list ul {
     margin-bottom: 0px;
     padding-bottom: 20px;
     padding-top: 20px; }
-    .oblvideo-list ul .page-item .page-link, .privatvideo-list ul .page-item .page-link, .orendamest-list ul .page-item .page-link {
+    .oblvideo-list ul .page-item .page-link, .privatvideo-list ul .page-item .page-link, .orendamest-list ul .page-item .page-link, .orendatrans-list ul .page-item .page-link {
       color: #000; }
-      .oblvideo-list ul .page-item .page-link:hover, .privatvideo-list ul .page-item .page-link:hover, .orendamest-list ul .page-item .page-link:hover {
+      .oblvideo-list ul .page-item .page-link:hover, .privatvideo-list ul .page-item .page-link:hover, .orendamest-list ul .page-item .page-link:hover, .orendatrans-list ul .page-item .page-link:hover {
         background-color: #FF6B50;
         border-color: #FF6B50;
         opacity: 0.7;
         -webkit-transition: color 0.25s ease;
         -o-transition: color 0.25s ease;
         transition: color 0.25s ease; }
-    .oblvideo-list ul .disabled, .privatvideo-list ul .disabled, .orendamest-list ul .disabled {
+    .oblvideo-list ul .disabled, .privatvideo-list ul .disabled, .orendamest-list ul .disabled, .orendatrans-list ul .disabled {
       opacity: 0.7; }
-    .oblvideo-list ul .active .page-link, .privatvideo-list ul .active .page-link, .orendamest-list ul .active .page-link {
+    .oblvideo-list ul .active .page-link, .privatvideo-list ul .active .page-link, .orendamest-list ul .active .page-link, .orendatrans-list ul .active .page-link {
       background-color: #FF6B50;
       border-color: #FF6B50; }
 
-.oblvideo-photo, .privatvideo-photo, .orendamest-photo {
+.oblvideo-photo, .privatvideo-photo, .orendamest-photo, .orendatrans-photo {
   background-color: #aaaaaa; }
+
+.orendatrans-photo ul {
+  text-align: left;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto; }
 
 .contacts {
   background-color: #aaaaaa; }
@@ -9760,7 +9767,7 @@ main {
 
 /* Medium Devises, Desctops */
 @media only screen and (max-width: 992px) {
-  h1 {
+  h1, h2 {
     font-size: 23px; }
   .my-header, .my-simple-header {
     height: auto; }
@@ -9849,7 +9856,7 @@ main {
 
 /* Extra Small Devises, Phones */
 @media only screen and (max-width: 480px) {
-  h1 {
+  h1, h2 {
     font-size: 17px; }
   .my-header .logo, .my-simple-header .logo {
     width: 60px; }
