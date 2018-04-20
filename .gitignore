@@ -1,4 +1,5 @@
 /node_modules
 /app/translations
+/app/__pycache__
 babel.cfg
 messages.pot
