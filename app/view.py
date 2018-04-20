@@ -85,7 +85,7 @@ def orenda_sevice(orenda_type):
 def aboutus():
     data = get_data()
     team = Users.query.all()
-    pubinfo = PubInfo.query.all()
+    pubinfo = Services.query.filter(Services.servtypes.has(ServTypes.name.contains('document'))).all()
     return render_template("aboutus.html",
         team = team, pubinfo = pubinfo, active = "aboutus_active", lang = data["lang"],
         main_user = data["main_user"], header_class = data["header_class"])
@@ -99,8 +99,8 @@ def contacts():
         if send_email(data["main_user"].email):
             error = None
             flash("Повідомлення відправленно" if data["lang"] == "ukr" else "Cooбщение отправленно") 
-    utils = Utils.query.all()
+    services = Services.query.filter(Services.servtypes.has(ServTypes.name.contains('service'))).all()
     if error : flash(error)
     return render_template("contacts.html",
-        utils = utils, error = error, active = "contacts_active", lang = data["lang"],
+        services = services, error = error, active = "contacts_active", lang = data["lang"],
         main_user = data["main_user"], header_class = data["header_class"])
