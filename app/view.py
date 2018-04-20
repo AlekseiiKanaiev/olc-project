@@ -79,6 +79,7 @@ def orenda():
 
 @app.route("/orenda/orendamest")
 def orendamest():
+    """ Rental Property """
     data = get_data()
     return render_template("orendamest.html", active = "orenda_active", lang = data["lang"],
         main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
