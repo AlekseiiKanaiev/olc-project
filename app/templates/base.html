@@ -109,11 +109,11 @@
                         <nav class="nav justify-content-center lang">
                             <li class="nav-item">
                                 <a class="nav-link {{ lang=='ukr' and 'active' }}" id = 'ukr' 
-                                    href="{{url}}?lang=ukr">укр</a>
+                                    href="{{request.path}}?lang=ukr">укр</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ lang=='rus' and 'active' }}" id = 'rus' 
-                                    href = "{{url}}?lang=rus">рус</a>
+                                    href = "{{request.path}}?lang=rus">рус</a>
                             </li>
                         </nav>
                     </div>

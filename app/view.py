@@ -14,10 +14,9 @@ def get_data(simple = True):
         lang = language
     else:
         lang = "ukr"
-    url = request.path
     header_class = "my-simple-header" if simple else "my-header"
     main_user = Users.query.filter(Users.roles.any(Roles.name.contains('main'))).first()
-    return dict(lang = lang, url = url, header_class = header_class, main_user = main_user)
+    return dict(lang = lang, header_class = header_class, main_user = main_user)
 
 def send_email(recipient = None):
     name = request.form.get("inputName")
@@ -52,7 +51,7 @@ def main():
     team = Users.query.all()
     return render_template("index.html",
         video = video, team = team, active = "index_active", lang = data["lang"],  
-        main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
+        main_user = data["main_user"], header_class = data["header_class"])
 
 @app.route("/gallery")
 def gallery():
@@ -70,25 +69,17 @@ def video_gallery(video_type):
     pages = video.paginate(page = page, per_page = 3)
     return render_template(video_type+".html", 
             pages = pages, active = "gallery_active", lang = data["lang"],
-            main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
+            main_user = data["main_user"], header_class = data["header_class"])
 
 @app.route("/orenda")
-@login_required
 def orenda():
-    return redirect(url_for('orendatrans'))
+    return redirect(url_for('orenda_service', orenda_type = "orendatrans"))
 
-@app.route("/orenda/orendamest")
-def orendamest():
-    """ Rental Property """
+@app.route("/orenda/<orenda_type>")
+def orenda_sevice(orenda_type):
     data = get_data()
-    return render_template("orendamest.html", active = "orenda_active", lang = data["lang"],
-        main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
-
-@app.route("/orenda/orendatrans")
-def orendatrans():
-    data = get_data()
-    return render_template("orendatrans.html", active = "orenda_active", lang = data["lang"],
-        main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
+    return render_template(orenda_type+".html", active = "orenda_active", lang = data["lang"],
+        main_user = data["main_user"], header_class = data["header_class"])
 
 @app.route("/aboutus")
 def aboutus():
@@ -97,7 +88,7 @@ def aboutus():
     pubinfo = PubInfo.query.all()
     return render_template("aboutus.html",
         team = team, pubinfo = pubinfo, active = "aboutus_active", lang = data["lang"],
-        main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
+        main_user = data["main_user"], header_class = data["header_class"])
 
 @app.route("/contacts", methods = ["POST", "GET"])
 def contacts():
@@ -112,4 +103,4 @@ def contacts():
     if error : flash(error)
     return render_template("contacts.html",
         utils = utils, error = error, active = "contacts_active", lang = data["lang"],
-        main_user = data["main_user"], url = data["url"], header_class = data["header_class"])
+        main_user = data["main_user"], header_class = data["header_class"])
