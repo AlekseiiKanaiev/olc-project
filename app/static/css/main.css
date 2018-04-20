@@ -9332,7 +9332,7 @@ main {
     max-height: 600px;
     width: 100%;
     margin-top: 100px; }
-    .my-header .description h1, .my-simple-header .description h1, .my-login-header .description h1 {
+    .my-header .description h2, .my-simple-header .description h2, .my-login-header .description h2 {
       font-size: 36px;
       letter-spacing: 4px;
       text-shadow: 0 0 0.2rem rgba(255, 107, 80, 0.7); }
@@ -9397,8 +9397,8 @@ main {
           background-size: cover;
   text-align: center;
   color: white; }
-  .golovna .last-video-header h1 {
-    margin-top: 30px; }
+  .golovna .last-video-header {
+    padding-top: 20px; }
   .golovna .last-video-video {
     margin-top: 10px;
     margin-bottom: 20px;

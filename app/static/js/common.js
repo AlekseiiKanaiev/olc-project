@@ -20,8 +20,8 @@ $(document).ready(function(){
         $("#video_background").css("position", "absolute")
 
         var div = (lang === "ukr")?
-        '<div class="description d-none d-lg-block"><div class = "ukr"><h1>Послуги з відеозйомки,<br/> фотозйомки та оренди</h1></div></div>'
-        :'<div class="description d-none d-lg-block"><div class = "rus"><h1>Услуги видеосъёмки,<br/> фотосъёмки и аренды</h1></div></div>'
+        '<div class="description d-none d-lg-block"><div class = "ukr"><h2>Послуги з відеозйомки,<br/> фотозйомки та оренди</h2></div></div>'
+        :'<div class="description d-none d-lg-block"><div class = "rus"><h2>Услуги видеосъёмки,<br/> фотосъёмки и аренды</h2></div></div>'
         $(".my-header").append(div)
         $(".my-header").css("height", "100vh")
         $("#my-carousel").addClass("d-lg-none")
