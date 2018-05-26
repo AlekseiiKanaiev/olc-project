@@ -9341,7 +9341,8 @@ main {
   height: 100%; }
 
 .golovna #my-carousel .carousel-caption {
-  margin-bottom: 200px; }
+  text-shadow: 0 0 1rem #ff6b50;
+  top: 65%; }
   .golovna #my-carousel .carousel-caption a {
     background-color: #FF6B50;
     opacity: 0.8;

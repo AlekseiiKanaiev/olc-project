@@ -85,7 +85,8 @@ $(document).ready(function(){
     //         $(this).find(".contacts-mail-success").removeClass("active").fadeOut();
     //     }, 3000);
     // })
-
+    
+    //setting document-list view
     $(".aboutus-button").click(function(){
         $(".aboutus-pubinfo").css("display", "block").hide().fadeIn("slow")
         $(this).hide("slow")

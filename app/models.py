@@ -55,32 +55,6 @@ class ServTypes(db.Model):
     def __repr__(self):
         return "Name: {}".format(self.name)
 
-
-# class Utils(db.Model):
-
-#     id = db.Column(db.Integer, primary_key = True)
-#     util_name_ukr = db.Column(db.String(140), unique = True)
-#     util_name_rus = db.Column(db.String(140), unique = True)
-
-#     def __init__(self, *args, **kwargs):
-#         super(Utils, self).__init__(*args, **kwargs)
-
-#     def __repr__(self):
-#         return "Util_name: {}".format(self.util_name)
-
-# class PubInfo(db.Model):
-
-#     id = db.Column(db.Integer, primary_key = True)
-#     doc_name_ukr = db.Column(db.String(140), unique = True)
-#     doc_name_rus = db.Column(db.String(140), unique = True)
-#     img_name = db.Column(db.String(140))
-
-#     def __init__(self, *args, **kwargs):
-#         super(PubInfo, self).__init__(*args, **kwargs)
-
-#     def __repr__(self):
-#         return "PubInfo: {}".format(self.util_name)
-
 ### Flask-Security ###
 
 #setting many-to-many 
