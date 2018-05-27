@@ -383,6 +383,29 @@ main
                     border-color: $accent-color
     &-photo
         background-color: #aaaaaa
+    .fotorama
+        // max-height: 300px
+        &__wrap
+            margin: auto
+        &__nav
+            &-wrap
+                position: absolute
+                bottom: 10px
+                padding: 0 30px
+                width: 100%
+        &__thumb
+            border: 5px solid white
+            transition: border-color 0.5s ease
+            &-border
+                border-color: $accent-color
+        // &__arr-
+        //     &-next, &-prev
+        //         &::before
+        //             font-family: "Font Awesome 5 Solid"
+        //             font-size: 32px
+        //     &-next
+        //         &::before
+        //             content: "\f105"
 
 .orendatrans
     &-photo

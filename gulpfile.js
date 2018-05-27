@@ -99,5 +99,8 @@ gulp.task("build", ["clean", "img", "css-min", "scripts"],
             .pipe(gulp.dest("./dist/static/js"))
 
         var buildHtml = gulp.src("./app/templates/*.html")
-            .pipe(gulp.dest("./dist/templates"));
+            .pipe(gulp.dest("./dist/templates"))
+        
+        var buildVideo = gulp.src("./app/static/video/*.*")
+            .pipe(gulp.dest("./dist/static/video"));
 });
