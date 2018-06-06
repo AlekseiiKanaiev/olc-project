@@ -98,9 +98,15 @@ gulp.task("build", ["clean", "img", "css-min", "scripts"],
         var buildJS = gulp.src("./app/static/js/**/*.js")
             .pipe(gulp.dest("./dist/static/js"))
 
-        var buildHtml = gulp.src("./app/templates/*.html")
+        var buildHtml = gulp.src("./app/templates/**/*.html")
             .pipe(gulp.dest("./dist/templates"))
         
         var buildVideo = gulp.src("./app/static/video/*.*")
-            .pipe(gulp.dest("./dist/static/video"));
+            .pipe(gulp.dest("./dist/static/video"))
+        
+        var buildPython = gulp.src("./app/*.py")
+            .pipe(gulp.dest("./dist"))
+            
+        var buildDB = gulp.src("./app/test.db")
+            .pipe(gulp.dest("./dist"));
 });
