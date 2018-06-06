@@ -91,7 +91,7 @@
                                 <select required type="text" class="form-control" id = "inputSelect" name = "inputSelect">
                                     <option selected disabled value="">{{"Виберіть послугу" if lang == "ukr" else "Выбeрите услугу"}}</option>
                                     {% for item in services %}
-                                    <option value="{{ item.util_name_ukr if lang == "ukr" else item.util_name_rus }}">
+                                    <option value="{{ item.name_ukr if lang == 'ukr' else item.name_rus }}">
                                         {{ item.name_ukr if lang == "ukr" else item.name_rus }}
                                     </option>
                                     {% endfor %}

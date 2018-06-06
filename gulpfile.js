@@ -88,7 +88,7 @@ gulp.task("build", ["clean", "img", "css-min", "scripts"],
     function(){
         var buildCSS = gulp.src([
                 "./app/static/css/main.css",
-                "./app/static/css/libs.min.css"
+                "./app/static/css/main.min.css"
             ])
             .pipe(gulp.dest("./dist/static/css"))
         
