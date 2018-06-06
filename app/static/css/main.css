@@ -9484,7 +9484,7 @@ main {
             align-self: center; }
     .team-carousel .team-carousel-item .item-img img {
       width: 80px;
-      height: auto;
+      height: 80px;
       -webkit-border-radius: 10em;
               border-radius: 10em; }
   .team-carousel .team-carousel-item svg {
@@ -9884,7 +9884,7 @@ main {
   .my-header .sm-h-phone, .my-simple-header .sm-h-phone {
     font-size: 14px; }
   .golovna #my-carousel .carousel-caption {
-    margin-top: 10px;
+    margin-top: -10px;
     margin-bottom: 50px;
     padding-bottom: 5px;
     font-size: 12px; }
