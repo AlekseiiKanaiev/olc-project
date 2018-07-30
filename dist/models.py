@@ -17,6 +17,8 @@ class Video(db.Model):
     video_id = db.Column(db.String(140))
     body = db.Column(db.Text)
     create = db.Column(db.DateTime, default = datetime.now())
+    videotag_id = db.Column(db.Integer, db.ForeignKey("videotags.id"))
+    videotag = db.relationship("VideoTags", backref = db.backref("video", lazy = "dynamic"))
 
     def __init__(self, *args, **kwargs):
         super(Video, self).__init__(*args, **kwargs)
@@ -28,6 +30,17 @@ class Video(db.Model):
 
     def __repr__(self):
         return "Video id: {}, title: {}".format(self.id, self.title)
+
+class VideoTags(db.Model):
+    __tablename__ = 'videotags'
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(140), unique = True)
+
+    def __init__(self, *args, **kwargs):
+        super(VideoTags, self).__init__(*args, **kwargs)
+
+    def __repr__(self):
+        return "Name: {}".format(self.name)
 
 class Services(db.Model):
     
