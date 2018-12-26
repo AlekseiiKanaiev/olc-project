@@ -54,7 +54,7 @@ class MainView(ModelView):
         return redirect(url_for("security.login", next = request.url))
 
 admin = Admin(app, "Home", url = "/", index_view = HomeAdminView('Home'))
-admin.add_views(AdminView(Video, db.session), AdminView(Services, db.session), AdminView(ServTypes, db.session))
+admin.add_views(AdminView(Video, db.session), AdminView(VideoTags, db.session), AdminView(Services, db.session), AdminView(ServTypes, db.session))
 admin.add_views(MainView(Users, db.session), MainView(Roles, db.session))
 
 ### Flask-Security ###

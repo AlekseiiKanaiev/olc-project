@@ -66,7 +66,7 @@ def video_gallery(video_type):
         page = int(page)
     else:
         page = 1
-    video = Video.query.filter(Video.title.contains(video_type)).order_by(Video.id.desc())
+    video = Video.query.filter(Video.videotag.has(VideoTags.name.contains(video_type))).order_by(Video.id.desc())
     pages = video.paginate(page = page, per_page = 3)
     return render_template(video_type+".html", 
             pages = pages, active = "gallery_active", lang = data["lang"],

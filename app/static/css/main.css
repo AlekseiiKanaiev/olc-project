@@ -9331,7 +9331,7 @@ main {
     height: 100%;
     max-height: 600px;
     width: 100%;
-    margin-top: 100px; }
+    margin-top: 55vh; }
     .my-header .description h2, .my-simple-header .description h2, .my-login-header .description h2 {
       font-size: 36px;
       letter-spacing: 4px;
@@ -9343,6 +9343,8 @@ main {
 .golovna #my-carousel .carousel-caption {
   text-shadow: 0 0 1rem #ff6b50;
   top: 65%; }
+  .golovna #my-carousel .carousel-caption .utils {
+    margin-top: -35px; }
   .golovna #my-carousel .carousel-caption a {
     background-color: #FF6B50;
     opacity: 0.8;
@@ -9393,7 +9395,7 @@ main {
     padding-left: 20px; }
 
 .golovna .last-video {
-  background-color: #444444;
+  background-color: #183E66;
   -webkit-background-size: cover;
           background-size: cover;
   text-align: center;
