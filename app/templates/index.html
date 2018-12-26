@@ -150,8 +150,21 @@
                         {% endif %}
                         </figure>
                         <div class="info">
-                            {{ item.position_ukr if lang == "ukr" else item.position_rus }} <br/>
-                            {{ item.full_name_ukr if lang == "ukr" else item.full_name_rus }}
+                            {% if lang == "ukr" %}
+                                {% if item.position_ukr %}
+                                    {{ item.position_ukr }} <br/>
+                                {% endif %}
+                                {% if item.full_name_ukr %}
+                                    {{ item.full_name_ukr }}
+                                {% endif %}
+                            {% else %}
+                                {% if item.position_rus %}
+                                    {{ item.position_rus }} <br/>
+                                {% endif %}
+                                {% if item.full_name_rus %}
+                                    {{ item.full_name_rus }}
+                                {% endif %}
+                            {% endif %}
                         </div>
                     </div>
                     {% endfor %}
