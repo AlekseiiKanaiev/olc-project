@@ -24,6 +24,14 @@ migarate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command("db", MigrateCommand)
 
+@app.after_request
+def after_request(response):
+  response.headers.add('Access-Control-Allow-Origin', '*')
+  response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+  response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+  return response
+
+
 mail = Mail(app)
 
 ### ADMIN ###
